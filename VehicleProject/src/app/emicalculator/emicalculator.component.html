@@ -1,0 +1,41 @@
+<div class="jumbotron text-center">
+    <h2 style="color:White;">Vehicle Loans EMI Calculators</h2>
+</div>
+<form name="formval" class="form-horizontal col-md-8">
+    <div class="form-group">
+        <label for="input" class="col-sm-4 control-label">Loan Amount</label>
+        <div class="col-sm-8">
+        <div class="input-group">
+        <input type="number" class="form-control input-sm" id="idLoanAmount" name="pr_amt"
+         placeholder="Enter Loan Amount" formControlName="pr_amt">
+        </div>
+        </div>
+    </div>
+    
+    <div class="form-group" data-role="rangeslider">
+        <label for="input" class="col-sm-4 control-label">Tenure(In Months)({{time.value}})</label>
+        <div class="col-sm-8">
+        <div class="input-group">
+        <input type="range" #time (input)="time.value" id="idTenure" min="0" max="360" 
+        name="period" value="0" formControlName="period">
+    </div>
+</div>
+    </div>
+    <div class="form-group">
+        <label for="input" class="col-sm-4 control-label">Rate of Interest</label>
+        <div class="col-sm-8">
+        <div class="input-group">
+        <input type="number" class="form-control input-sm" id="idROI" name="int_rate"
+         placeholder="Enter Rate Of Interest" formControlName="idROI">
+        </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-12">
+        <button type="button" name="calculate" value="Calculate" onclick="emi()" class="btn btn-primary">Calculate EMI</button>
+        <button type="reset" class="btn btn-link">Reset All</button>
+        </div>
+    </div>
+    
+    
+</form>

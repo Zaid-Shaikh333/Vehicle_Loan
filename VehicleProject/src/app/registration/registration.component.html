@@ -1,0 +1,164 @@
+
+
+<div class="col-md-3"></div>
+<div class="container text-center justify-context-center custom-card">
+    <h1 class="text-center">Registration</h1>
+    
+    <form [formGroup]="registrationform">      
+            <div class="form-group">
+                <span class="icon">
+                    <i class="fas fa-user username"></i>
+                </span>
+                <input type="text" placeholder="Enter First Name" name="first_name" formControlName="firstname" required>                      
+            </div>
+
+            <div *ngIf="!registrationform.get('firstname')?.valid && 
+            (registrationform.get('firstname')?.dirty || registrationform.get('firstname')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('firstname')?.errors?.required">
+                    <small class="text-danger">First Name is Required</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                
+                <span class="icon">
+                    <i class="fas fa-user username" ></i>
+                </span>
+                <input type="text" placeholder="Enter Last Name" name="last_name" formControlName="lastname" required>  
+            
+            </div>
+
+            <div *ngIf="!registrationform.get('lastname')?.valid && 
+            (registrationform.get('lastname')?.dirty || registrationform.get('lastname')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('lastname')?.errors?.required">
+                    <small class="text-danger">Last Name is Required</small>
+                </div>
+            </div>
+
+                <div class="form-check gender-check">
+                    <span class="icon">
+                        <i class="fas fa-venus-mars gender"></i>
+                    </span>               
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="male" checked>
+                        <label class="form-check-label" for="Male">
+                        Male
+                        </label>
+                     </div>  
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="female" checked>
+                        <label class="form-check-label" for="Female">
+                        Female
+                        </label>
+                     </div> 
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="other" checked>
+                        <label class="form-check-label" for="Other">
+                        Other
+                        </label>
+                     </div>                                   
+                </div>
+            
+
+            <div class="form-group">              
+                
+                <span class="icon">
+                    <i class="fas fa-phone-square-alt mobile"></i>
+                </span>
+                <input type="number" placeholder="Enter Mobile Number" name="mobile_no" formControlName="mobile" pattern="/^\d{10}$/" required>
+            
+            </div>
+
+            <div *ngIf="!registrationform.get('mobile')?.valid && 
+            (registrationform.get('mobile')?.dirty || registrationform.get('mobile')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('mobile')?.errors?.required">
+                    <small class="text-danger">Your Contact is Required</small>
+                </div>
+            </div>
+            <div *ngIf="registrationform.get('mobile')?.errors?.pattern">
+                <small class="text-danger">Mobile No should be 10 Digits</small>
+            </div>
+
+            <div class="form-group">
+                
+                <span class="icon">
+                    <i class="fas fa-envelope email"></i>
+                </span>
+                <input type="email" placeholder="Enter Email" name="email" formControlName="email" pattern="^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required>
+            
+            </div>
+
+            <div *ngIf="!registrationform.get('email')?.valid && 
+            (registrationform.get('email')?.dirty || registrationform.get('email')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('email')?.errors?.required">
+                    <small class="text-danger">Please Enter your Email</small>
+                </div>
+            </div>
+            <div *ngIf="registrationform.get('email')?.errors?.pattern">
+                <small class="text-danger">Please Enter Correct Email Pattern</small>
+            </div>
+
+            <div class="form-group">                
+                 <span class="icon">
+                    <i class="fas fa-lock password"></i>
+                </span>
+                <input type="password" placeholder="Enter Password" name="password" formControlName="password" pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,})$" required>            
+            </div>
+            
+            <div *ngIf="!registrationform.get('password')?.valid && 
+            (registrationform.get('password')?.dirty || registrationform.get('password')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('password')?.errors?.required">
+                    <small class="text-danger">Password is Required</small>
+                </div>
+            </div>
+            <div *ngIf="registrationform.get('password')?.errors?.pattern">
+                <small class="text-danger">Password Should be Min 8 Characters Long</small>
+            </div>
+            <div *ngIf="registrationform.get('password')?.errors?.pattern">
+                <small class="text-danger">Password Should Contain 1 Special Character,1 Digit,1 Uppercase & 1 Lowercase</small>
+            </div>
+
+            <div class="form-group">
+                
+                <span class="icon">
+                    <i class="fas fa-home address"></i>
+                </span>
+                <input type="text" placeholder="Enter Address" name="address" formControlName="address" required>
+            
+            </div>
+
+            <div *ngIf="!registrationform.get('address')?.valid && 
+            (registrationform.get('address')?.dirty || registrationform.get('address')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('address')?.errors?.required">
+                    <small class="text-danger">Your Address is Required</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                
+                <span class="icon">
+                    <i class="fas fa-map-marker-alt city"></i>
+                </span>
+                <input type="text" placeholder="Enter city" name="city" formControlName="city" required>
+            </div>
+            
+            <div *ngIf="!registrationform.get('city')?.valid && 
+            (registrationform.get('city')?.dirty || registrationform.get('city')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('city')?.errors?.required">
+                    <small class="text-danger">Please Enter your City</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary">Register</button>
+            </div>        
+    </form>
+</div>
+
+<div class="col-md-3"></div>
