@@ -11,6 +11,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { ClientlistComponent } from './clientlist/clientlist.component';
 import { RejectedlistComponent } from './rejectedlist/rejectedlist.component';
 import { PendingapplicationsComponent } from './pendingapplications/pendingapplications.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PendingapplicationsComponent } from './pendingapplications/pendingappli
     AdmindashboardComponent,
     ClientlistComponent,
     RejectedlistComponent,
-    PendingapplicationsComponent
+    PendingapplicationsComponent,
+    UserdashboardComponent
   ],
   imports: [
     BrowserModule,
