@@ -7432,11 +7432,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anita\\Desktop\\LTI\\API\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj",
+      "projectUniqueName": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj",
       "projectName": "PrjWebAPI1",
-      "projectPath": "C:\\Users\\Anita\\Desktop\\LTI\\API\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj",
+      "projectPath": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj",
       "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anita\\Desktop\\LTI\\API\\PrjWebAPI1\\PrjWebAPI1\\obj\\",
+      "outputPath": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\PrjWebAPI1\\PrjWebAPI1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
