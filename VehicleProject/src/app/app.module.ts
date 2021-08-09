@@ -11,6 +11,15 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { ViewClientsComponent } from './view-clients/view-clients.component';
 import { RejectedlistComponent } from './rejectedlist/rejectedlist.component';
 import { PendingapplicationsComponent } from './pendingapplications/pendingapplications.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { VehicleloanComponent } from './vehicleloan/vehicleloan.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+
+
 
 @NgModule({
   declarations: [
@@ -21,12 +30,19 @@ import { PendingapplicationsComponent } from './pendingapplications/pendingappli
     AdmindashboardComponent,
     ViewClientsComponent,
     RejectedlistComponent,
-    PendingapplicationsComponent
+    PendingapplicationsComponent,
+    UserdashboardComponent,
+    VehicleloanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    MatButtonModule,
+    MatInputModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

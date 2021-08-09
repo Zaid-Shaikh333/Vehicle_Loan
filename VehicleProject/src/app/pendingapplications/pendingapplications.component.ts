@@ -9,6 +9,16 @@ export class PendingapplicationsComponent implements OnInit {
 
   constructor() { }
 
+    approveLoan()
+  {
+    
+  }
+
+  rejectLoan()
+  {
+    
+  }
+
   ngOnInit(): void {
   }
 
