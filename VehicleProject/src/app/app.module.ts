@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { EmicalculatorComponent } from './emicalculator/emicalculator.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import { ClientlistComponent } from './clientlist/clientlist.component';
+import { ViewClientsComponent } from './view-clients/view-clients.component';
 import { RejectedlistComponent } from './rejectedlist/rejectedlist.component';
 import { PendingapplicationsComponent } from './pendingapplications/pendingapplications.component';
 
@@ -19,7 +19,7 @@ import { PendingapplicationsComponent } from './pendingapplications/pendingappli
     UserloginComponent,
     EmicalculatorComponent,
     AdmindashboardComponent,
-    ClientlistComponent,
+    ViewClientsComponent,
     RejectedlistComponent,
     PendingapplicationsComponent
   ],
