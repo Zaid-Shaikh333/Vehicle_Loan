@@ -1,5 +1,4 @@
-li a :hover{
-    
+li a:hover{
     color:rgb(14, 80, 124); 
     border-radius: 5px;
 }

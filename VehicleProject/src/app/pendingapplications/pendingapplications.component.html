@@ -1,1 +1,74 @@
-<p>pendingapplications works!</p>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">            
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-car"></i>                 
+                </a>              
+          <ul class="nav navbar-nav">
+            <li ><a href="#">Clients</a></li>
+            <li><a href="#">Applications</a></li>
+            <li><a href="#">Rejected List</a></li>     
+          </ul>        
+          <div class="collapse navbar-collapse dorpdown-class" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle custom-bg text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Settings
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">View Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>      
+        </div>
+      </nav>
+
+</div>
+
+<div class = "container">
+    <div class="row">
+        <br><br>
+        <h1 class = "text" >Loan Application</h1>
+        <hr style = "width:100%">
+        <p class = "text" style = "color: grey; font-size: 15px;">Please verify and approve users accordingly.<p> <br>
+    </div>
+    <table id = "table">
+        <tr>
+          <th> LOAN ID</th>
+          <th> LOAN TYPE </th>
+          <th> EMI </th>
+          <th> INTEREST RATE (%) </th>
+          <th> LOAN AMOUNT </th>
+          <th> PROCESSING FEE </th>
+          <th> TENURE </th>
+          <th> LOAN STATUS </th>
+          <th> APPLICATION STATUS </th>
+        </tr>
+      <!--<tr *ngFor = "let user of AllPendingUserList;"> 
+        <td> {{user.loanId}} </td> 
+        <td> {{user.loantype}} </td>
+        <td> {{user.emi}} </td> 
+        <td> {{user.interestRate}}% </td>
+        <td> {{user.loanAmount}} </td>
+        <td> {{user.processingFee}} </td>
+        <td> {{user.tenure}} </td>
+        <td> {{user.loanStatus}} </td>
+        <td> {{user.applicationStatus}} </td>
+        <td> <input type = "button" class="accept" (click)="approveLoan(user.loanId)" value="Accept"> </td>
+        <td> <input type = "button" class="reject" (click)="rejectLoan(user.loanId)" value="Reject"> </td>
+      </tr>-->
+      </table>
+</div>
+
+<div>
+    <footer class=" text-center text-lg-start custom-footer">
+        <!-- Copyright -->
+        <div class="text-center p-3">
+          © 2021 Copyright:
+          <a class="text-light" href="#">VehicleLoan.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </div>
