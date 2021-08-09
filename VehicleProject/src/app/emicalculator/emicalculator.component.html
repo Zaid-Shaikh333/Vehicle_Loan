@@ -1,7 +1,7 @@
 <div class="jumbotron text-center">
     <h2 style="color:White;">Vehicle Loans EMI Calculators</h2>
 </div>
-<form name="formval" class="form-horizontal col-md-8">
+<form [formGroup]="formval" class="form-horizontal col-md-8">
     <div class="form-group">
         <label for="input" class="col-sm-4 control-label">Loan Amount</label>
         <div class="col-sm-8">
@@ -17,7 +17,7 @@
         <div class="col-sm-8">
         <div class="input-group">
         <input type="range" #time (input)="time.value" id="idTenure" min="0" max="360" 
-        name="period" value="0" formControlName="period">
+        name="period"  formControlName="period">
     </div>
 </div>
     </div>
@@ -26,13 +26,13 @@
         <div class="col-sm-8">
         <div class="input-group">
         <input type="number" class="form-control input-sm" id="idROI" name="int_rate"
-         placeholder="Enter Rate Of Interest" formControlName="idROI">
+         placeholder="Enter Rate Of Interest" formControlName="int_rate">
         </div>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-4 col-sm-12">
-        <button type="button" name="calculate" value="Calculate" onclick="emi()" class="btn btn-primary">Calculate EMI</button>
+        <button type="button" name="calculate" value="Calculate" (click)="emi()" class="btn btn-primary">Calculate EMI</button>
         <button type="reset" class="btn btn-link">Reset All</button>
         </div>
     </div>

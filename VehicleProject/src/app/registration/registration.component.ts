@@ -1,6 +1,8 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { registration } from '../Models/registration';
+import { registrationService } from '../Services/registrationService';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class RegistrationComponent implements OnInit {
 
   registrationform: FormGroup;
-  constructor() {
+  constructor(private regservice:registrationService) {
     this.registrationform = new FormGroup({
       firstname:new FormControl(null,Validators.required),
       lastname:new FormControl(null,Validators.required),
@@ -30,5 +32,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+
 
 }

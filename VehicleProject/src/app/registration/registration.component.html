@@ -65,7 +65,7 @@
                 <span class="icon">
                     <i class="fas fa-phone-square-alt mobile"></i>
                 </span>
-                <input type="number" placeholder="Enter Mobile Number" name="mobile_no" formControlName="mobile" pattern="/^\d{10}$/" required>
+                <input type="number" placeholder="Enter Mobile Number" name="mobile_no" formControlName="mobile" required>
             
             </div>
 
@@ -76,9 +76,9 @@
                     <small class="text-danger">Your Contact is Required</small>
                 </div>
             </div>
-            <div *ngIf="registrationform.get('mobile')?.errors?.pattern">
+            <!--<div *ngIf="registrationform.get('mobile')?.errors?.pattern">
                 <small class="text-danger">Mobile No should be 10 Digits</small>
-            </div>
+            </div>-->
 
             <div class="form-group">
                 
@@ -154,7 +154,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-outline-primary">Register</button>
+                <button type="submit"  class="btn btn-outline-primary" (click)="PostUser()" >Register</button>
             </div>        
     </form>
 </div>
