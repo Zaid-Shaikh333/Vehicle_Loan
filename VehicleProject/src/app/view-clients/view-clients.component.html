@@ -45,17 +45,15 @@
           <th> LOAN STATUS </th>
           <th> APPLICATION STATUS </th>
         </tr>
-      <!--<tr *ngFor = "let user of AllApprovedUserList; let index = index;"> 
-        <td> {{index + 1}} </td>
-        <td> {{user.loanId}} </td> 
-        <td> {{user.loantype}} </td>
-        <td> {{user.emi}} </td> 
-        <td> {{user.interestRate}}% </td>
-        <td> {{user.loanAmount}} </td>
-        <td> {{user.processingFee}} </td>
-        <td> {{user.tenure}} </td>
-        <td> {{user.loanStatus}} </td>
-        <td> {{user.applicationStatus}} </td>
-      </tr>-->
+      <tr *ngFor = "let user of clients; let index = index;"> 
+        <td> {{index + 1}}</td>
+        <td> {{user.ApplicationId}}</td>
+        <td> {{user.UserId}}</td>
+        <td> {{user. VehicleId }}</td>
+        <td> {{user.LoanId}}</td>
+        <td> {{user.AdminId}}</td>
+        <td> {{user.Status}}</td>
+        <td> {{user.Description}}</td>
+      </tr>
       </table>
 </div>
