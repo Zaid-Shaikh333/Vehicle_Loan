@@ -18,6 +18,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import { EligibilityComponent } from './eligibility/eligibility.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -33,7 +35,8 @@ import {MatListModule} from '@angular/material/list';
     RejectedlistComponent,
     PendingapplicationsComponent,
     UserdashboardComponent,
-    VehicleloanComponent
+    VehicleloanComponent,
+    EligibilityComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import {MatListModule} from '@angular/material/list';
     MatInputModule,
     MatStepperModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

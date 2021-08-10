@@ -1,0 +1,45 @@
+
+<div class = "container">
+    <br>
+    <h1 class = "text" style = "font-size: 30px; text-align: center; font-weight: 600;">Check Loan Eligibility</h1>
+    <hr style="width: 50%;">
+    <p class = "text" style = "color: grey; font-size: 12px; text-align: center;">Enter your details to check your eligibility for the loan.<p><br> 
+    <form (ngSubmit)=checkeligiblity() ngNativeValidate>
+        <div class = "row">
+        <p class="text" style = "color: #5f866e; font-weight:600; letter-spacing: 1px;"> Enter the Vehical Detail </p>
+        <input type = "text" style="width: 43%" placeholder = "Vehicle Make"/>
+        <input type = "text" style="width: 43%" placeholder="Vehicle Model"/> <br>
+        <input type = "text" style="width: 43%" placeholder = "Ex-Showroom Price"/>
+        <input type = "number" style="width: 43%" name="onroadprice" placeholder="On-Road Price" [(ngModel)]="onroadprice" required/> <br> <br>     
+        <hr style = "height: 2px; border: 0; background-color: rgb(214, 214, 214);"><br>
+        <p class="text" style = "color: #5f866e; font-weight:600; letter-spacing: 1px;"> Enter the Applicant Detail </p>
+        <input type = "text" style="width: 43%" placeholder = "First Name"/>
+        <input type = "text" style="width: 43%" placeholder = "Last Name"/> <br>
+        <input type = "text" style="width: 43%" placeholder = "Age"/>
+        <input type = "text" style="width: 43%" placeholder = "Gender" placeholder = "Type of Employment"/>
+        <input type = "number" style="width: 43%" name="monthlysavings" placeholder = "Monthly Savings (Ex:- 10000)" [(ngModel)]="monthlysavings" required/>
+        <input type = "number" style="width: 43%" name="existingemi" placeholder = "Existing EMI" [(ngModel)]="existingemi" required/> 
+        <input type = "number" style="width: 43%" name="loantenure" placeholder = "Loan Tenure" [(ngModel)]="loantenure" required /><br> <br>
+
+        <hr style = "height: 2px; border: 0; background-color: rgb(214, 214, 214);">
+        <br>
+
+        <p class="text" style = "color: #5f866e; font-weight:600; letter-spacing: 1px;"> Enter the Contact Detail </p>
+
+        <input type = "text" style="width: 43%" placeholder = "Mobile Number"/>
+        <input type = "text" style="width: 43%" placeholder = "Email"/> <br> <br> <br>
+    
+        </div>
+    <button type="submit" class='btn login'>Check Eligiblity</button><br><br>
+    <p class = "text" style = "color: rgb(68, 68, 68); font-size: 15px; font-weight:600; text-align: center; letter-spacing: 2px;"> {{stat}} </p> <br>   
+    </form>
+</div>
+
+<footer class="footer">
+    <br>
+    <p>© New Wheels 2020. All Rights Reserved.<br>
+        <a>Project Gladiator (Larsen & Toubro Infotech Limited)</a></p><br>
+</footer>
+
+
+

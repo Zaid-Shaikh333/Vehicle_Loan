@@ -71,4 +71,6 @@ export class VehicleloanComponent implements OnInit {
     this.vehicleservice.insertvehicle(this.vehicle).subscribe((data) => this.message = data);
     this.loanservice.insertloan(this.loan1).subscribe((data) => this.message = data);
   }
+
+  
 }
