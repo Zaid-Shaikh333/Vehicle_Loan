@@ -103,5 +103,32 @@ namespace VehicleLoanAPI.Controllers
         {
             return _context.Approvals.Any(e => e.ApplicationId == id);
         }
+<<<<<<< HEAD
+=======
+        //[HttpGet]
+        /* public IActionResult GetApprovalList(int id)
+          {
+              var gal = (from l in LoanDetail
+                         join a in Approval
+                         on l.loan_id equals a.loan_id
+                         join v in VehicleDetail
+                         on v.vehicle_id equals a.vehicle_id
+                         select new
+                         {
+                             l.loan_id,
+                             a.status,
+                             l.emi,
+                             l.interestrate,
+                             l.amount,
+                             l.startDate,
+                             l.tenure,
+                             v.model
+                         });
+
+              return Ok(gal);
+        }*/
+
+
+>>>>>>> 84421bd6a0b87b0e41261de7880b6564b0e86b17
     }
 }

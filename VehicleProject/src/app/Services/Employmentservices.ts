@@ -7,7 +7,7 @@ export class Employmentservices {
     constructor(private http: HttpClient) {
 
     }
-    public uri = "https://localhost:44334/api/employmentdetails";
+    public uri = "http://localhost:23810/api/employmentdetails";
 
     insertemployment(employment: Employment) {
         debugger;

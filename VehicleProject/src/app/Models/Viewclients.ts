@@ -8,3 +8,7 @@ export class Viewclients{
     description?:string;
     
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 84421bd6a0b87b0e41261de7880b6564b0e86b17

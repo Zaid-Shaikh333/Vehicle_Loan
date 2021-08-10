@@ -7,7 +7,7 @@ import { Loan } from '../Models/Loanmodel';
 export class LoanServices {
     constructor(private http: HttpClient) { }
 
-    readonly uri = "https://localhost:44334/api/loandetails";
+    readonly uri = "http://localhost:23810/api/loandetails";
 
 
     getloan() {
