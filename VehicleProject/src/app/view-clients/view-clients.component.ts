@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { Viewclients } from '../Models/Viewclients';
+
 import { ViewClientsService } from '../Services/ViewclientsService';
 
 @Component({
@@ -19,7 +19,7 @@ export class ViewClientsComponent implements OnInit {
 
   constructor ( private router:Router,private uservice:ViewClientsService) { }
 
-  clients:Viewclients={};
+  clients:any;
 
   ngOnInit() {
     /*this.adminName=sessionStorage.getItem('adminName');
@@ -31,10 +31,8 @@ export class ViewClientsComponent implements OnInit {
     this.fetchData();
     
 }
-fetchData(){
-  this.uservice.GetApprovals().subscribe((data)=>{console.table(data); this.clients = data},
-  (err) => {
-    this.errmsg = err.console.error.Message;
-  });
+fetchData() {
+  debugger;
+  this.uservice.GetApprovals().subscribe((data) => {console.table(data); this.clients = data});
 }
 }

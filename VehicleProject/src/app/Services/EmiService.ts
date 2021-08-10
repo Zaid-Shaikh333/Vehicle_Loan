@@ -1,21 +1,22 @@
 import {HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Viewclients } from "../Models/Viewclients";
-
+import { Emi } from "../Models/Emi";
 
 @Injectable({providedIn:"root"})
-export class ViewClientsService
+export class EmiService
 {
     constructor(private http:HttpClient)
-    { 
+    {
+       
     }
-    readonly uri="https://localhost:44334/api/approvals";
+    readonly uri="https://localhost:44334/api/emi";
 
     //calling GetVehicleDetails() method from api
-    GetApprovals()
+    GetUser(e:Emi)
     {
+
         //debugger;
-        return this.http.get(this.uri);
+        return this.http.post(this.uri,e);
     }
     
     

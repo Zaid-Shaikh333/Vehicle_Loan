@@ -7427,19 +7427,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mayank\\.nuget\\packages\\": {}
+    "C:\\Users\\Anita\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\New folder\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj",
       "projectName": "VehicleLoanAPI",
-      "projectPath": "D:\\New folder\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj",
-      "packagesPath": "C:\\Users\\Mayank\\.nuget\\packages\\",
-      "outputPath": "D:\\New folder\\VehicleLoanAPI\\VehicleLoanAPI\\obj\\",
+      "projectPath": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj",
+      "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleLoanAPI\\VehicleLoanAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mayank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
