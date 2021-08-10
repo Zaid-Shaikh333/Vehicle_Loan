@@ -1,179 +1,182 @@
 <div class="container" >
-    <div class="w3-card-4" >
-      <h1>Application Form</h1>
-  <mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="employmentform">
-      <form [formGroup]="employmentform">
-        <ng-template matStepLabel>Employment Details</ng-template>
-        <mat-form-field>
-          <mat-label>Employement Type</mat-label>
-          <select matNativeControl formControlName="employementType" required>
-            <option>Salaried</option>
-            <option>Self Employed</option>
-            <option>Self Employed Professional</option>
-            <option>Retired</option>    
-          </select>
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Salary</mat-label>
-          <input matInput  type="number" placeholder="Enter Salary" formControlName="salary" required>
-          
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Existing EMI</mat-label>
-          <input matInput type="number" placeholder="Existing EMI amount" formControlName="existingEMI" required>
-          
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Other Sources</mat-label>
-          <input matInput type="number" placeholder="Other Sources of Income" formControlName="otherSources" required>
-          
-        </mat-form-field>
-        <div>
-          <button class="btn btn-primary" mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-  
-  
-    <mat-step [stepControl]="vehicleform">
-      <form [formGroup]="vehicleform">
-        <ng-template matStepLabel>Vehicle Details</ng-template>
-        <mat-form-field>
-          <mat-label>Manufacturer</mat-label>
-          <input matInput placeholder="Manufacturer" formControlName="manufacturer" required>
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Type</mat-label>
-          <select matNativeControl formControlName="type" required>
-            <option>2 Wheeler</option>
-            <option>4 Wheeler</option>
-               
-          </select>
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Model</mat-label>
-          <input matInput placeholder="Model" formControlName="model" required>
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Ex-ShowroomPrice</mat-label>
-          <input matInput type="number" placeholder="ExShowroom Price" formControlName="exShowroomPrice" required>
-        </mat-form-field>
-        <br />
-        <div>
-          <button  class="btn btn-primary" mat-button matStepperPrevious>Back</button>
-          <button class="btn btn-primary" mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-  
-  
-  
-    <mat-step [stepControl]="documentsform">
-      <form [formGroup]="documentsform">
-        <ng-template matStepLabel>Documents Details</ng-template>
-        <mat-form-field>
-          <mat-label>Aadhar Card</mat-label>
-          <input  matInput placeholder="Aadhar card" formControlName="aadharcard" >
-           
-          </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>PanCard</mat-label>
-          <input matInput placeholder="PanCard" formControlName="pancard" required>
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Salary Slip</mat-label>
-          <input matInput placeholder="Salary Slip" formControlName="paymentslip" required>
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Photo</mat-label>
-          <input matInput placeholder="Photo" formControlName="photo" required>
-        </mat-form-field>
-        <br />
-        <div>
-          <button  class="btn btn-primary" mat-button matStepperPrevious>Back</button>
-          <button class="btn btn-primary" mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-  
-  
-  
-  
-    <mat-step [stepControl]="loandetailsform">
-      <form [formGroup]="loandetailsform">
-        <ng-template matStepLabel>Loan Details</ng-template>
-        <mat-form-field>
-          <mat-label>Amount</mat-label>
-          <input matInput type="number" placeholder="amount" formControlName="amount" required>
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>Loan Tenure</mat-label>
-          <select matNativeControl formControlName="loanTenure" required>
-            <option>5 Years</option>
-            <option>10 Years</option>
-            <option>15 Years</option>
-            <option>20 Years</option>    
-          </select>
-          
-        </mat-form-field>
-        <br />
-        <mat-form-field>
-          <mat-label>ROI</mat-label>
-          <input matInput placeholder="ROI" formControlName="ROI" required>
+  <div class="w3-card-4" >
+    <h1>Application Form</h1>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="employmentform">
+    <form [formGroup]="employmentform">
+      <ng-template matStepLabel>Employment Details</ng-template>
+      <mat-form-field>
+        <mat-label>Employement Type</mat-label>
+        <select matNativeControl formControlName="employementType" [(ngModel)]="emp.employementType" required>
+          <option>Salaried</option>
+          <option>Self Employed</option>
+          <option>Self Employed Professional</option>
+          <option>Retired</option>    
+        </select>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Salary</mat-label>
+        <input matInput  type="number" placeholder="Enter Salary" formControlName="annualSalary" [(ngModel)]="emp.annualSalary" required>
         
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Existing EMI</mat-label>
+        <input matInput type="number" placeholder="Existing EMI amount" formControlName="emi" [(ngModel)]="emp.emi" required>
+        
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Other Sources</mat-label>
+        <input matInput type="number" placeholder="Other Sources of Income" formControlName="otherIncome" [(ngModel)]="emp.otherIncome" required>
+        
+      </mat-form-field>
+      <div>
+        <button class="btn btn-primary" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="vehicleform">
+    <form [formGroup]="vehicleform">
+      <ng-template matStepLabel>Vehicle Details</ng-template>
+      <mat-form-field>
+        <mat-label>Manufacturer</mat-label>
+        <input matInput placeholder="Manufacturer" formControlName="manufacturer"  [(ngModel)]="vehicle.manufacturer" required>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <select matNativeControl formControlName="vehicleType"  [(ngModel)]="vehicle.vehicleType" required>
+          <option>2 Wheeler</option>
+          <option>4 Wheeler</option>
+             
+        </select>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Model</mat-label>
+        <input matInput placeholder="Model" formControlName="vehicleModel" [(ngModel)]="vehicle.vehicleModel" required>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Ex-ShowroomPrice</mat-label>
+        <input matInput type="number" placeholder="ExShowroom Price" formControlName="exShowroomPrice" [(ngModel)]="vehicle.exShowroomPrice" required>
+      </mat-form-field>
+      <br />
+      <div>
+        <button  class="btn btn-primary" mat-button matStepperPrevious>Back</button>
+        <button class="btn btn-primary" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+
+ <!-- <mat-step [stepControl]="documentsform">
+    <form [formGroup]="documentsform">
+      <ng-template matStepLabel>Documents Details</ng-template>
+      <mat-form-field>
+        <mat-label>Aadhar Card</mat-label>
+        <input  matInput placeholder="Aadhar card" formControlName="aadharcard" >
+         
         </mat-form-field>
-        <br />
-        <mat-form-field>
-          <label>Start Date</label>
-          <input matInput type="Date"  formControlName="startdate" required>
-          
-        </mat-form-field>
-        <div>
-          <button class="btn btn-primary" mat-button matStepperPrevious>Back</button>
-          <button class="btn btn-primary" mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-  
-      <mat-list>
-        <mat-list-item> <strong>Employement Type:</strong> {{ this.employmentform?.value?.employementType }}
-        </mat-list-item>
-        <mat-list-item> <strong>Salary:</strong> {{ this.employmentform?.value?.salary }}</mat-list-item>
-        <mat-list-item> <strong>Existing EMI:</strong> {{ this.employmentform?.value?.existingEMI }}</mat-list-item>
-        <mat-list-item> <strong>Other Sources:</strong> {{ this.employmentform?.value?.otherSources }}</mat-list-item>
-  
-        <mat-list-item> <strong>Manufacturer:</strong> {{ this.vehicleform?.value?.manufacturer }}</mat-list-item>
-        <mat-list-item> <strong>Vehicle Type:</strong> {{ this.vehicleform?.value?.type }}</mat-list-item>
-        <mat-list-item> <strong>Model:</strong> {{ this.vehicleform?.value?.model }}</mat-list-item>
-        <mat-list-item> <strong>Ex-Showroom Price:</strong> {{ this.vehicleform?.value?.exShowroomPrice }}</mat-list-item>
-  
-        <mat-list-item> <strong>Amount:</strong> {{ this.loandetailsform?.value?.amount }}</mat-list-item>
-        <mat-list-item> <strong>Loan Tenure:</strong> {{ this.loandetailsform?.loanTenure?.type }}</mat-list-item>
-        <mat-list-item> <strong>ROI:</strong> {{ this.loandetailsform?.value?.ROI }}</mat-list-item>
-        <mat-list-item> <strong>Start-Date:</strong> {{ this.loandetailsform?.value?.startdate }}</mat-list-item>
-  
-      </mat-list>
-  
+      <br />
+      <mat-form-field>
+        <mat-label>PanCard</mat-label>
+        <input matInput placeholder="PanCard" formControlName="pancard" required>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Salary Slip</mat-label>
+        <input matInput placeholder="Salary Slip" formControlName="paymentslip" required>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Photo</mat-label>
+        <input matInput placeholder="Photo" formControlName="photo" required>
+      </mat-form-field>
+      <br />
+      <div>
+        <button  class="btn btn-primary" mat-button matStepperPrevious>Back</button>
+        <button class="btn btn-primary" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+-->
+
+
+
+  <mat-step [stepControl]="loandetailsform">
+    <form [formGroup]="loandetailsform">
+      <ng-template matStepLabel>Loan Details</ng-template>
+      <mat-form-field>
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" placeholder="amount" formControlName="loanAmount" [(ngModel)]="loan1.loanAmount" required>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Loan Tenure</mat-label>
+        <select matNativeControl formControlName="loanTenure" [(ngModel)]="loan1.loanTenure" required>
+          <option>5 Years</option>
+          <option>10 Years</option>
+          <option>15 Years</option>
+          <option>20 Years</option>    
+        </select>
+        
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>ROI</mat-label>
+        <input matInput placeholder="ROI" formControlName="rateOfInterest" [(ngModel)]="loan1.rateOfInterest" required>
+      
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <label>Start Date</label>
+        <input matInput type="Date"  formControlName="startDate" [(ngModel)]="loan1.startDate" required>
+        
+      </mat-form-field>
       <div>
         <button class="btn btn-primary" mat-button matStepperPrevious>Back</button>
-        <button class="btn btn-primary" mat-button (click)="stepper.reset()">Reset</button>
-        <button  mat-button (click)="submit()">Submit</button>
+        <button class="btn btn-primary" mat-button matStepperNext>Next</button>
       </div>
-    </mat-step>
-  </mat-horizontal-stepper>
-  </div>
-  </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+
+    <mat-list>
+      <mat-list-item> <strong>Employement Type:</strong> {{ this.employmentform?.value?.employementType }}
+      </mat-list-item>
+      <mat-list-item> <strong>Salary:</strong> {{ this.employmentform?.value?.annualSalary }}</mat-list-item>
+      <mat-list-item> <strong>Existing EMI:</strong> {{ this.employmentform?.value?.emi }}</mat-list-item>
+      <mat-list-item> <strong>Other Sources:</strong> {{ this.employmentform?.value?.otherIncome }}</mat-list-item>
+
+      <mat-list-item> <strong>Manufacturer:</strong> {{ this.vehicleform?.value?.manufacturer }}</mat-list-item>
+      <mat-list-item> <strong>Vehicle Type:</strong> {{ this.vehicleform?.value?.vehicleType }}</mat-list-item>
+      <mat-list-item> <strong>Model:</strong> {{ this.vehicleform?.value?.vehicleModel }}</mat-list-item>
+      <mat-list-item> <strong>Ex-Showroom Price:</strong> {{ this.vehicleform?.value?.exShowroomPrice }}</mat-list-item>
+
+      <mat-list-item> <strong>Amount:</strong> {{ this.loandetailsform?.value?.loanAmount }}</mat-list-item>
+      <mat-list-item> <strong>Loan Tenure:</strong> {{ this.loandetailsform?.value?.loanTenure }}</mat-list-item>
+      <mat-list-item> <strong>ROI:</strong> {{ this.loandetailsform?.value?.rateOfInterest }}</mat-list-item>
+      <mat-list-item> <strong>Start-Date:</strong> {{ this.loandetailsform?.value?.startDate }}</mat-list-item>
+
+    </mat-list>
+
+    <div>
+      <button class="btn btn-primary" mat-button matStepperPrevious>Back</button>
+      <button class="btn btn-primary" mat-button (click)="stepper.reset()">Reset</button>
+      <button  mat-button (click)="submit()">Submit</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+</div>
+</div>
+
+

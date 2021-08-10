@@ -7,8 +7,7 @@ import { Viewclients } from "../Models/Viewclients";
 export class ViewClientsService
 {
     constructor(private http:HttpClient)
-    {
-       
+    { 
     }
     readonly uri="http://localhost:52677/api/approvals";
 

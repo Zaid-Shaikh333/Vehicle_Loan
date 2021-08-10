@@ -14,11 +14,13 @@ export class ViewClientsComponent implements OnInit {
 
   adminName:any;
   adminId:any;
-  Message:any;
+  Message?:any;
+  errmsg:any;
 
   constructor ( private router:Router,private uservice:ViewClientsService) { }
 
   clients:Viewclients={};
+
   ngOnInit() {
     /*this.adminName=sessionStorage.getItem('adminName');
     this.adminId=sessionStorage.getItem('adminId');
@@ -26,8 +28,13 @@ export class ViewClientsComponent implements OnInit {
     {
       this.router.navigate(['admin']);
     }*/
+    this.fetchData();
     
-    this.uservice.GetApprovals()
-    .subscribe((data) => this.Message=data);
+}
+fetchData(){
+  this.uservice.GetApprovals().subscribe((data)=>{console.table(data); this.clients = data},
+  (err) => {
+    this.errmsg = err.console.error.Message;
+  });
 }
 }
