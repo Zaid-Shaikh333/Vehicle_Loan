@@ -1,9 +1,9 @@
 import {HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { registration } from "../Models/registration";
+import { userlogin } from "../Models/userlogin";
 
 @Injectable({providedIn:"root"})
-export class registrationService
+export class userloginService
 {
     constructor(private http:HttpClient)
     {
@@ -12,9 +12,8 @@ export class registrationService
     readonly uri="http://localhost:52677/api/users";
 
     //calling GetVehicleDetails() method from api
-    GetUser(user:registration)
+    GetUser(user:userlogin)
     {
-
         //debugger;
         return this.http.post(this.uri,user);
     }

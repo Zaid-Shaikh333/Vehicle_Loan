@@ -7,13 +7,13 @@
                 <span class="icon">
                     <i class="fas fa-user username"></i>
                 </span>
-                <input type="text" placeholder="Enter First Name" name="first_name" formControlName="firstname" required>                      
+                <input type="text" placeholder="Enter First Name" name="first_name" formControlName="FirstName" [(ngModel)]="user.FirstName" required>                      
             </div>
 
-            <div *ngIf="!registrationform.get('firstname')?.valid && 
-            (registrationform.get('firstname')?.dirty || registrationform.get('firstname')?.touched)
+            <div *ngIf="!registrationform.get('FirstName')?.valid && 
+            (registrationform.get('FirstName')?.dirty || registrationform.get('FirstName')?.touched)
             " class="error">
-                <div *ngIf="registrationform.get('firstname')?.errors?.required">
+                <div *ngIf="registrationform.get('FirstName')?.errors?.required">
                     <small class="text-danger">First Name is Required</small>
                 </div>
             </div>
@@ -23,14 +23,14 @@
                 <span class="icon">
                     <i class="fas fa-user username" ></i>
                 </span>
-                <input type="text" placeholder="Enter Last Name" name="last_name" formControlName="lastname" required>  
+                <input type="text" placeholder="Enter Last Name" name="last_name" formControlName="LastName" [(ngModel)]="user.LastName" required>  
             
             </div>
 
-            <div *ngIf="!registrationform.get('lastname')?.valid && 
-            (registrationform.get('lastname')?.dirty || registrationform.get('lastname')?.touched)
+            <div *ngIf="!registrationform.get('LastName')?.valid && 
+            (registrationform.get('LastName')?.dirty || registrationform.get('LastName')?.touched)
             " class="error">
-                <div *ngIf="registrationform.get('lastname')?.errors?.required">
+                <div *ngIf="registrationform.get('LastName')?.errors?.required">
                     <small class="text-danger">Last Name is Required</small>
                 </div>
             </div>
@@ -40,19 +40,19 @@
                         <i class="fas fa-venus-mars gender"></i>
                     </span>               
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" value="male" checked>
+                        <input class="form-check-input" type="radio" name="Gender" value="male" formControlName="Gender" [(ngModel)]="user.Gender" checked>
                         <label class="form-check-label" for="Male">
                         Male
                         </label>
                      </div>  
                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" value="female" checked>
+                        <input class="form-check-input" type="radio" name="Gender" value="female" formControlName="Gender" [(ngModel)]="user.Gender" checked>
                         <label class="form-check-label" for="Female">
                         Female
                         </label>
                      </div> 
                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" value="other" checked>
+                        <input class="form-check-input" type="radio" name="Gender" value="other" formControlName="Gender" [(ngModel)]="user.Gender" checked>
                         <label class="form-check-label" for="Other">
                         Other
                         </label>
@@ -65,14 +65,14 @@
                 <span class="icon">
                     <i class="fas fa-phone-square-alt mobile"></i>
                 </span>
-                <input type="number" placeholder="Enter Mobile Number" name="mobile_no" formControlName="mobile" required>
+                <input type="number" placeholder="Enter Mobile Number" name="mobile_no" formControlName="MobileNo" [(ngModel)]="user.MobileNo" required>
             
             </div>
 
-            <div *ngIf="!registrationform.get('mobile')?.valid && 
-            (registrationform.get('mobile')?.dirty || registrationform.get('mobile')?.touched)
+            <div *ngIf="!registrationform.get('MobileNo')?.valid && 
+            (registrationform.get('MobileNo')?.dirty || registrationform.get('MobileNo')?.touched)
             " class="error">
-                <div *ngIf="registrationform.get('mobile')?.errors?.required">
+                <div *ngIf="registrationform.get('MobileNo')?.errors?.required">
                     <small class="text-danger">Your Contact is Required</small>
                 </div>
             </div>
@@ -85,18 +85,18 @@
                 <span class="icon">
                     <i class="fas fa-envelope email"></i>
                 </span>
-                <input type="email" placeholder="Enter Email" name="email" formControlName="email" pattern="^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required>
+                <input type="email" placeholder="Enter Email" name="email" formControlName="Email" pattern="^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" [(ngModel)]="user.Email" required>
             
             </div>
 
-            <div *ngIf="!registrationform.get('email')?.valid && 
-            (registrationform.get('email')?.dirty || registrationform.get('email')?.touched)
+            <div *ngIf="!registrationform.get('Email')?.valid && 
+            (registrationform.get('Email')?.dirty || registrationform.get('Email')?.touched)
             " class="error">
-                <div *ngIf="registrationform.get('email')?.errors?.required">
+                <div *ngIf="registrationform.get('Email')?.errors?.required">
                     <small class="text-danger">Please Enter your Email</small>
                 </div>
             </div>
-            <div *ngIf="registrationform.get('email')?.errors?.pattern">
+            <div *ngIf="registrationform.get('Email')?.errors?.pattern">
                 <small class="text-danger">Please Enter Correct Email Pattern</small>
             </div>
 
@@ -104,20 +104,20 @@
                  <span class="icon">
                     <i class="fas fa-lock password"></i>
                 </span>
-                <input type="password" placeholder="Enter Password" name="password" formControlName="password" pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,})$" required>            
+                <input type="password" placeholder="Enter Password" name="password" formControlName="Password" pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,})$" [(ngModel)]="user.Password" required>            
             </div>
             
-            <div *ngIf="!registrationform.get('password')?.valid && 
-            (registrationform.get('password')?.dirty || registrationform.get('password')?.touched)
+            <div *ngIf="!registrationform.get('Password')?.valid && 
+            (registrationform.get('Password')?.dirty || registrationform.get('Password')?.touched)
             " class="error">
-                <div *ngIf="registrationform.get('password')?.errors?.required">
+                <div *ngIf="registrationform.get('Password')?.errors?.required">
                     <small class="text-danger">Password is Required</small>
                 </div>
             </div>
-            <div *ngIf="registrationform.get('password')?.errors?.pattern">
+            <div *ngIf="registrationform.get('Password')?.errors?.pattern">
                 <small class="text-danger">Password Should be Min 8 Characters Long</small>
             </div>
-            <div *ngIf="registrationform.get('password')?.errors?.pattern">
+            <div *ngIf="registrationform.get('Password')?.errors?.pattern">
                 <small class="text-danger">Password Should Contain 1 Special Character,1 Digit,1 Uppercase & 1 Lowercase</small>
             </div>
 
@@ -126,14 +126,14 @@
                 <span class="icon">
                     <i class="fas fa-home address"></i>
                 </span>
-                <input type="text" placeholder="Enter Address" name="address" formControlName="address" required>
+                <input type="text" placeholder="Enter Address" name="address" formControlName="Address" [(ngModel)]="user.Address" required>
             
             </div>
 
-            <div *ngIf="!registrationform.get('address')?.valid && 
-            (registrationform.get('address')?.dirty || registrationform.get('address')?.touched)
+            <div *ngIf="!registrationform.get('Address')?.valid && 
+            (registrationform.get('Address')?.dirty || registrationform.get('Address')?.touched)
             " class="error">
-                <div *ngIf="registrationform.get('address')?.errors?.required">
+                <div *ngIf="registrationform.get('Address')?.errors?.required">
                     <small class="text-danger">Your Address is Required</small>
                 </div>
             </div>
@@ -143,18 +143,51 @@
                 <span class="icon">
                     <i class="fas fa-map-marker-alt city"></i>
                 </span>
-                <input type="text" placeholder="Enter city" name="city" formControlName="city" required>
+                <input type="text" placeholder="Enter city" name="city" formControlName="City" [(ngModel)]="user.City" required>
             </div>
             
-            <div *ngIf="!registrationform.get('city')?.valid && 
-            (registrationform.get('city')?.dirty || registrationform.get('city')?.touched)
+            <div *ngIf="!registrationform.get('City')?.valid && 
+            (registrationform.get('City')?.dirty || registrationform.get('City')?.touched)
             " class="error">
-                <div *ngIf="registrationform.get('city')?.errors?.required">
+                <div *ngIf="registrationform.get('City')?.errors?.required">
                     <small class="text-danger">Please Enter your City</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                
+                <span class="icon">
+                    <i class="fas fa-map-marker-alt State"></i>
+                </span>
+                <input type="text" placeholder="Enter State" name="state" formControlName="State" [(ngModel)]="user.State" required>
+            </div>
+            
+            <div *ngIf="!registrationform.get('State')?.valid && 
+            (registrationform.get('State')?.dirty || registrationform.get('State')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('State')?.errors?.required">
+                    <small class="text-danger">Please Enter your State</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                
+                <span class="icon">
+                    <i class="fas fa-map-marker-alt Pincode"></i>
+                </span>
+                <input type="text" placeholder="Enter pincode" name="pincode" formControlName="Pincode" [(ngModel)]="user.Pincode" required>
+            </div>
+            
+            <div *ngIf="!registrationform.get('Pincode')?.valid && 
+            (registrationform.get('Pincode')?.dirty || registrationform.get('Pincode')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('Pincode')?.errors?.required">
+                    <small class="text-danger">Please Enter your Pincode</small>
                 </div>
             </div>
             <div class="form-group">
                 <button type="submit"  class="btn btn-outline-primary" (click)="PostUser()" >Register</button>
+                <button  class="btn btn-outline-danger"><a routerLink="/login">Login</a></button>
             </div>        
     </form>
 </div>

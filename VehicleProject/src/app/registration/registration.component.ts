@@ -15,14 +15,16 @@ export class RegistrationComponent implements OnInit {
   registrationform: FormGroup;
   constructor(private regservice:registrationService) {
     this.registrationform = new FormGroup({
-      firstname:new FormControl(null,Validators.required),
-      lastname:new FormControl(null,Validators.required),
-      gender:new FormControl(null,Validators.required),
-      mobile:new FormControl(null,Validators.required),
-      email:new FormControl(null,Validators.required),
-      password:new FormControl(null,Validators.required),
-      address:new FormControl(null,Validators.required),
-      city:new FormControl(null,Validators.required)
+      FirstName:new FormControl(null,Validators.required),
+      LastName:new FormControl(null,Validators.required),
+      Gender:new FormControl(null,Validators.required),
+      MobileNo:new FormControl(null,Validators.required),
+      Email:new FormControl(null,Validators.required),
+      Password:new FormControl(null,Validators.required),
+      Address:new FormControl(null,Validators.required),
+      City:new FormControl(null,Validators.required),
+      State:new FormControl(null,Validators.required),
+      Pincode:new FormControl(null,Validators.required)
     })
    }
 
@@ -32,7 +34,11 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-
+user:registration={};
+message:any;
+  PostUser()
+  {
+    this.regservice.GetUser(this.user).subscribe((data)=>this.message=data);
+  }
 
 }

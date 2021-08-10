@@ -1,0 +1,22 @@
+li a:hover{
+    background-color: white;
+    color:rgb(14, 80, 124); 
+}
+li a{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: 0.5s ease-in;
+    text-decoration: none;
+    color: white;
+    padding-right: 10px;  
+    font-size: 1.6rem;
+    float: left;
+}
+.navbar{
+    background-color: rgb(14, 80, 124);
+    margin-bottom: 30px;
+}
+.navbar-brand{
+    text-decoration: none;
+    height: 50px;
+    width: 50px;
+}
