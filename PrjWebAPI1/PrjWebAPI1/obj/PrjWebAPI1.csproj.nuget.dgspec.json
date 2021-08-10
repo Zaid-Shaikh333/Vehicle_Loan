@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj": {}
+    "D:\\New folder\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj": {
+    "D:\\New folder\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj",
+        "projectUniqueName": "D:\\New folder\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj",
         "projectName": "PrjWebAPI1",
-        "projectPath": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj",
-        "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\PrjWebAPI1\\PrjWebAPI1\\obj\\",
+        "projectPath": "D:\\New folder\\PrjWebAPI1\\PrjWebAPI1\\PrjWebAPI1.csproj",
+        "packagesPath": "C:\\Users\\Mayank\\.nuget\\packages\\",
+        "outputPath": "D:\\New folder\\PrjWebAPI1\\PrjWebAPI1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mayank\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
