@@ -1,59 +1,61 @@
 <div>
   <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">            
-              <a class="navbar-brand" href="#">
-                  <i class="fas fa-car"></i>                 
-              </a>              
-        <ul class="nav navbar-nav">
-          <li ><a routerLink="/viewall">Clients</a></li>
-          <li><a routerLink="/pending">Applications</a></li>
-          <li><a routerLink="/reject">Rejected List</a></li>     
-        </ul>        
-        <div class="collapse navbar-collapse dorpdown-class" id="navbarNavDarkDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle custom-bg text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Settings
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">View Profile</a></li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>      
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-car"></i>
+      </a>
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/viewall">Clients</a></li>
+        <li><a routerLink="/pending">Applications</a></li>
+        <li><a routerLink="/reject">Rejected List</a></li>
+      </ul>
+      <div class="collapse navbar-collapse dorpdown-class" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle custom-bg text-light" href="#" id="navbarDarkDropdownMenuLink"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Settings
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">View Profile</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
-</div>
-<div class = "container">
-    <div class="row">
-        <br><br>
-        <h1 class = "text" style = "font-size: 25px;">Client List</h1>
-        <hr style = "width:70%">
-        <p class = "text" style = "color: grey; font-size: 15px;">List of all approved users.<p> <br>
     </div>
-    <table id = "table">
-        <tr>
-          <th> INDEX </th>
-          <th> Application ID</th>
-          <th> LOAN TYPE </th>
-          <th> EMI </th>
-          <th> INTEREST RATE (%) </th>
-          <th> LOAN AMOUNT </th>
-          <th> PROCESSING FEE </th>
-          <th> TENURE </th>
-          <th> LOAN STATUS </th>
-          <th> APPLICATION STATUS </th>
-        </tr>
-      <!--<tr  *ngFor = "let user of clients; let index = index;">
-        <td> {{index + 1}}</td>
-        <td> {{user.ApplicationId}}</td>
-        <td> {{user.UserId}}</td>
-        <td> {{user. VehicleId }}</td>
-        <td> {{user.LoanId}}</td>
-        <td> {{user.AdminId}}</td>
-        <td> {{user.Status}}</td>
-        <td> {{user.Description}}</td>
-      </tr>-->
-      </table>
+  </nav>
+</div>
+<div class="container">
+  <div class="row">
+    <br><br>
+    <h1 class="text" style="font-size: 25px;">Client List</h1>
+    <hr style="width:70%">
+    <p class="text" style="color: grey; font-size: 15px;">List of all approved users.
+    <p> <br>
+  </div>
+  <table id="table">
+    <tr>
+      <th> INDEX </th>
+      <th> Application ID</th>
+      <th> LOAN TYPE </th>
+      <th> EMI </th>
+      <th> INTEREST RATE (%) </th>
+      <th> LOAN AMOUNT </th>
+      <th> PROCESSING FEE </th>
+      <th> TENURE </th>
+      <th> LOAN STATUS </th>
+      <th> APPLICATION STATUS </th>
+    </tr>
+    <tr *ngFor="let c of clients; let i = index;">
+      <td> {{i + 1}}</td>
+      <td> {{c.applicationId}}</td>
+      <td> {{c.userId}}</td>
+      <td> {{c.vehicleId }}</td>
+      <td> {{c.loanId}}</td>
+      <td> {{c.adminId}}</td>
+      <td> {{c.status}}</td>
+      <td> {{c.description}}</td>
+    </tr>
+  </table>
 </div>

@@ -1,9 +1,11 @@
 export class Viewclients{
-        ApplicationId ?:number;
-        UserId ?:number;
-        VehicleId ?:number;
-        LoanId ?:number;
-        AdminId ?:number;
-        Status ?:string;
-        Description?:string;
+    applicationId ?:number;
+    userId ?:number;
+    vehicleId ?:number;
+    loanId ?:number;
+    adminId ?:number;
+    status ?:string;
+    description?:string;
+    
     }
+    

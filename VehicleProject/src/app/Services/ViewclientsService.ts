@@ -1,5 +1,6 @@
 import {HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { Viewclients } from "../Models/Viewclients";
 
 
@@ -9,7 +10,7 @@ export class ViewClientsService
     constructor(private http:HttpClient)
     { 
     }
-    readonly uri="http://localhost:52677/api/approvals";
+    readonly uri="http://localhost:23810/api/approvals";
 
     //calling GetVehicleDetails() method from api
     GetApprovals()

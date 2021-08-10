@@ -7,7 +7,7 @@ import { Vehicle } from '../Models/Vehiclemodel';
 export class VehicleService {
     constructor(private http: HttpClient) { }
 
-    readonly uri = "https://localhost:44334/api/vehicledetails";
+    readonly uri = "http://localhost:23810/api/vehicledetails";
 
     getvehicle() {
         return this.http.get(this.uri);
