@@ -1,14 +1,17 @@
 export class Viewclients{
-    applicationId ?:number;
-    userId ?:number;
-    vehicleId ?:number;
-    loanId ?:number;
-    adminId ?:number;
-    status ?:string;
-    description?:string;
+         user_Id ?:number;
+         first_name ?:string;
+         last_name ?:string;
+         status ?:string;
+         manufacturer ?:string;
+         vehicle_type ?:string;
+         vehicle_model ?:string;
+         loan_amount ?:number;
+         loan_tenure ?:number;
+         start_date ?:string;
+         end_date ?:string;
+         rate_of_interest ?:number;
+         monthly_emi ?:number;
     
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> 84421bd6a0b87b0e41261de7880b6564b0e86b17
+

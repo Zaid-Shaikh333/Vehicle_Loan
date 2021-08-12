@@ -54,9 +54,9 @@ export class VehicleloanComponent implements OnInit {
     );
 
     this.documentsform = new FormGroup({
-      aadharcard: new FormControl(null, Validators.required),
-      pancard: new FormControl(null, Validators.required),
-      paymentslip: new FormControl(null, Validators.required),
+      aadhar_card: new FormControl(null, Validators.required),
+      pan_card: new FormControl(null, Validators.required),
+      salary_slip: new FormControl(null, Validators.required),
       photo: new FormControl(null, Validators.required)
     });
   }

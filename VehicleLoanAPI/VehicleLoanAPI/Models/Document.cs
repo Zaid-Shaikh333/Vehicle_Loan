@@ -12,6 +12,7 @@ namespace VehicleLoanAPI.Models
         public string PanCard { get; set; }
         public string SalarySlip { get; set; }
         public string Photo { get; set; }
+        public int DocumentsId { get; set; }
 
         public virtual User User { get; set; }
     }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VehicleLoanAPI.Models;
+using VehicleLoanAPI.Service;
 
 namespace VehicleLoanAPI.Controllers
 {
@@ -20,8 +21,16 @@ namespace VehicleLoanAPI.Controllers
             _context = context;
         }
 
+        private readonly IAdminRepository approvalRepository;
+        //private readonly Vehicle_LoanContext db;
+
+        public ApprovalsController(IAdminRepository vehicle_LoanRepository)
+        {
+            approvalRepository = vehicle_LoanRepository;
+        }
+
         // GET: api/Approvals
-        [HttpGet]
+        /*[HttpGet]
         public async Task<ActionResult<IEnumerable<Approval>>> GetApprovals()
         {
             return await _context.Approvals.ToListAsync();
@@ -103,8 +112,7 @@ namespace VehicleLoanAPI.Controllers
         {
             return _context.Approvals.Any(e => e.ApplicationId == id);
         }
-<<<<<<< HEAD
-=======
+
         //[HttpGet]
         /* public IActionResult GetApprovalList(int id)
           {
@@ -128,7 +136,26 @@ namespace VehicleLoanAPI.Controllers
               return Ok(gal);
         }*/
 
+        [HttpGet]
+        public async Task<IActionResult> GetPending_Applications()
+        {
+            try
+            {
+                dynamic details = await approvalRepository.GetPending_Applications();
+                    if (details.Count >0)
+                {
+                    return Ok(details);
+                }
+                else
+                {
+                    return NotFound("Record not found!!!");
+                }
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
 
->>>>>>> 84421bd6a0b87b0e41261de7880b6564b0e86b17
     }
 }

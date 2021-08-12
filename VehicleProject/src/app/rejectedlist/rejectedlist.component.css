@@ -1,8 +1,11 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sanswght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');*/
+
 li a:hover{
     background-color: white;
     color:rgb(14, 80, 124); 
-}
-li a{
+  }
+  li a{
     font-family:Georgia, 'Times New Roman', Times, serif;
     transition: 0.5s ease-in;
     text-decoration: none;
@@ -10,13 +13,66 @@ li a{
     padding-right: 10px;  
     font-size: 1.6rem;
     float: left;
-}
-.navbar{
+  }
+  .navbar{
     background-color: rgb(14, 80, 124);
     margin-bottom: 30px;
-}
-.navbar-brand{
+  }
+  .navbar-brand{
     text-decoration: none;
     height: 50px;
     width: 50px;
-}
+  }
+  .container {
+      position: relative;
+      background-color: #f2f2f2;
+      padding: 20px 0 30px 0;
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 80px;
+    } 
+  
+  #table {  
+      font-family: 'Poppins', sans-serif;
+      border-collapse: collapse;
+      font-size: 13px;
+      width: 90%;
+      margin: auto;
+      margin-bottom: 30px;
+      text-align: center;
+    
+    }
+  #table tr{background-color: #f2f2f2;}
+  
+  #table tr:hover {background-color: #ddd;}
+  
+  #table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 15px;
+    font-weight: lighter;
+    text-align: center;
+    background-color: rgb(14, 80, 124);
+    color: white;
+  }
+  
+  table, th , td  {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+  
+    .row {
+      float: center;
+      margin: auto;
+      padding: 0 50px;
+      margin-top: 6px;
+    }
+  
+    .text {
+      text-align:center;
+      font-family: 'Open Sans', sans-serif;
+      color: #233329;
+    }

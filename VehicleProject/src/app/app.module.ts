@@ -18,6 +18,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import { LoanOffersComponent } from './loan-offers/loan-offers.component';
 
 
 
@@ -33,7 +34,8 @@ import {MatListModule} from '@angular/material/list';
     RejectedlistComponent,
     PendingapplicationsComponent,
     UserdashboardComponent,
-    VehicleloanComponent
+    VehicleloanComponent,
+    LoanOffersComponent
   ],
   imports: [
     BrowserModule,

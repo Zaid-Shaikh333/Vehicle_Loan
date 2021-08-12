@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Router } from '@angular/router';
-
 import { ViewClientsService } from '../Services/ViewclientsService';
 
 @Component({
@@ -16,17 +13,15 @@ export class ViewClientsComponent implements OnInit {
   adminId: any;
   Message?: any;
   errmsg: any;
-  c?: Viewclients;
+ 
 
   constructor(private uservice: ViewClientsService) { }
 
-<<<<<<< HEAD
-  constructor ( private router:Router,private uservice:ViewClientsService) { }
 
-  clients:any;
-=======
+
+
   clients: any;
->>>>>>> 84421bd6a0b87b0e41261de7880b6564b0e86b17
+
 
   ngOnInit() {
     /*this.adminName=sessionStorage.getItem('adminName');
@@ -36,20 +31,12 @@ export class ViewClientsComponent implements OnInit {
       this.router.navigate(['admin']);
     }*/
     this.fetchData();
-<<<<<<< HEAD
+
     
 }
 fetchData() {
-  debugger;
-  this.uservice.GetApprovals().subscribe((data) => {console.table(data); this.clients = data});
+ // debugger;
+  this.uservice.GetApproved_Applications().subscribe((data) => {console.table(data); this.clients = data});
 }
-=======
 
-
-  }
-  fetchData() {
-    debugger;
-    this.uservice.GetApprovals().subscribe((data) => {console.table(data); this.clients = data});
-  }
->>>>>>> 84421bd6a0b87b0e41261de7880b6564b0e86b17
 }

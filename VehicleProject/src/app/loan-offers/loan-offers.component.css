@@ -1,0 +1,61 @@
+li a:hover{
+    color:rgb(14, 80, 124); 
+    border-radius: 5px;
+}
+li a{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: 0.5s ease-in;
+    text-decoration: none;
+    color: white;
+    padding-right: 10px;  
+    font-size: 1.6rem;
+    float: left;
+}
+
+.navbar{
+    background-color: rgb(14, 80, 124);
+    margin-bottom: 30px;}
+.nav-item{
+padding-left: 10px;
+}
+.navbar-brand{
+    text-decoration: none;
+    height: 50px;
+    width: 50px;
+}
+.offer-cards{
+    display:flex;
+    justify-content: space-evenly;
+}
+.card{
+    margin:2rem;
+border: 1px #fff;
+box-shadow: 1px 1px 5px 0px;
+font-size: large;
+}
+img{
+    height: 50%;
+    width: 100%;
+
+}
+p{
+    margin-top: 5px;
+}
+.card-title{
+font: 60px bold;
+}
+i{
+    font-size: 2.5rem;
+    color: white;
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+
+.custom-footer{
+    position: fixed;
+    margin-top: 20px;
+    background: rgb(14, 80, 124);
+    color: white;  
+    width: 100%;
+    bottom: 0;
+}

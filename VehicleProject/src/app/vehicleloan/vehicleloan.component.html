@@ -2,7 +2,7 @@
   <div class="w3-card-4" >
     <h1>Application Form</h1>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="employmentform">
+  <!--<mat-step [stepControl]="employmentform">
     <form [formGroup]="employmentform">
       <ng-template matStepLabel>Employment Details</ng-template>
       <mat-form-field>
@@ -72,33 +72,28 @@
         <button class="btn btn-primary" mat-button matStepperNext>Next</button>
       </div>
     </form>
-  </mat-step>
+  </mat-step>-->
 
-
-
- <!-- <mat-step [stepControl]="documentsform">
+  <mat-step [stepControl]="documentsform">
     <form [formGroup]="documentsform">
       <ng-template matStepLabel>Documents Details</ng-template>
-      <mat-form-field>
-        <mat-label>Aadhar Card</mat-label>
-        <input  matInput placeholder="Aadhar card" formControlName="aadharcard" >
-         
-        </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>PanCard</mat-label>
-        <input matInput placeholder="PanCard" formControlName="pancard" required>
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Salary Slip</mat-label>
-        <input matInput placeholder="Salary Slip" formControlName="paymentslip" required>
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Photo</mat-label>
-        <input matInput placeholder="Photo" formControlName="photo" required>
-      </mat-form-field>
+      <div>
+        <label>Aadhar Card</label>
+        <input  type="file" placeholder="Aadhar card" formControlName="aadhar_card" >
+      </div>
+      <div>
+        <label>Pan Card</label>
+        <input  type="file" placeholder="Pan card" formControlName="pan_card" >
+      </div>
+      <div>
+        <label>Salary Slip</label>
+        <input  type="file" placeholder="Salary Slip" formControlName="salary_slip" >
+      </div>
+      <div>
+        <label>Photo</label>
+        <input  type="file" placeholder="Photo" formControlName="photo" >
+      </div>
+        
       <br />
       <div>
         <button  class="btn btn-primary" mat-button matStepperPrevious>Back</button>
@@ -106,7 +101,38 @@
       </div>
     </form>
   </mat-step>
--->
+
+ <!--<mat-step [stepControl]="documentsform">
+    <form [formGroup]="documentsform">
+      <ng-template matStepLabel>Documents Details</ng-template>
+      <mat-form-field>
+        <mat-label>Aadhar Card</mat-label>
+        <input  matInput type="url" placeholder="Aadhar card" formControlName="aadhar_card" >
+         
+        </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>PanCard</mat-label>
+        <input matInput type="url" placeholder="PanCard" formControlName="pan_card" required>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Salary Slip</mat-label>
+        <input matInput type="url" placeholder="Salary Slip" formControlName="salary_slip" required>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Photo</mat-label>
+        <input matInput type="url" placeholder="Photo" formControlName="photo" required>
+      </mat-form-field>
+      <br />
+      <div>
+        <button  class="btn btn-primary" mat-button matStepperPrevious>Back</button>
+        <button class="btn btn-primary" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>-->
+
 
 
 

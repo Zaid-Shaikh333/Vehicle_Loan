@@ -24,17 +24,19 @@ namespace VehicleLoanAPI.Models
         public virtual DbSet<LoanDetail> LoanDetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<VehicleDetail> VehicleDetails { get; set; }
-       
+        public virtual DbSet<approved_applications> Approved_Applications { get; set; }
+        public virtual DbSet<pending_applications> Pending_Applications { get; set; }
+        public virtual DbSet<rejected_applications> Rejected_Applications { get; set; }
 
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=LAPTOP-IO2R8GLF;Database=Vehicle_Loan;Trusted_Connection=True;");
-            }
-        }*/
-
+        /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+         {
+             if (!optionsBuilder.IsConfigured)
+             {
+ #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                 optionsBuilder.UseSqlServer("Server=DESKTOP-A4ACC9P;Database=Vehicle_Loan;Trusted_Connection=True;");
+             }
+         }
+        */
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
@@ -43,7 +45,7 @@ namespace VehicleLoanAPI.Models
             {
                 entity.ToTable("Admin");
 
-                entity.HasIndex(e => e.Email, "UQ__Admin__A9D10534C217851F")
+                entity.HasIndex(e => e.Email, "UQ__Admin__A9D10534A101442C")
                     .IsUnique();
 
                 entity.Property(e => e.AdminId).HasColumnName("admin_id");
@@ -58,7 +60,7 @@ namespace VehicleLoanAPI.Models
             modelBuilder.Entity<Approval>(entity =>
             {
                 entity.HasKey(e => e.ApplicationId)
-                    .HasName("PK__Approval__3BCBDCF29F6FB298");
+                    .HasName("PK__Approval__3BCBDCF2A9DE9DB1");
 
                 entity.ToTable("Approval");
 
@@ -103,7 +105,10 @@ namespace VehicleLoanAPI.Models
 
             modelBuilder.Entity<Document>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.DocumentsId)
+                    .HasName("PK__Document__A0F01DE16D712676");
+
+                entity.Property(e => e.DocumentsId).HasColumnName("Documents_Id");
 
                 entity.Property(e => e.AadharCard)
                     .HasMaxLength(255)
@@ -124,19 +129,16 @@ namespace VehicleLoanAPI.Models
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.HasOne(d => d.User)
-                    .WithMany()
+                    .WithMany(p => p.Documents)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Documents__user___5629CD9C");
+                    .HasConstraintName("FK__Documents__user___4BAC3F29");
             });
 
             modelBuilder.Entity<EmploymentDetail>(entity =>
             {
-                entity.HasKey(e => e.EmployementId)
-                    .HasName("PK__Employme__55D5576450D6D39F");
+                entity.HasNoKey();
 
                 entity.ToTable("Employment_details");
-
-                entity.Property(e => e.EmployementId).HasColumnName("Employement_Id");
 
                 entity.Property(e => e.AnnualSalary).HasColumnName("annual_salary");
 
@@ -151,7 +153,7 @@ namespace VehicleLoanAPI.Models
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.EmploymentDetails)
+                    .WithMany()
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK__Employmen__user___3A81B327");
             });
@@ -159,7 +161,7 @@ namespace VehicleLoanAPI.Models
             modelBuilder.Entity<LoanDetail>(entity =>
             {
                 entity.HasKey(e => e.LoanId)
-                    .HasName("PK__Loan_det__A1F79554F8466E7B");
+                    .HasName("PK__Loan_det__A1F795548C9A5C95");
 
                 entity.ToTable("Loan_details");
 
@@ -200,10 +202,10 @@ namespace VehicleLoanAPI.Models
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasIndex(e => e.Email, "UQ__Users__A9D1053419C0C29A")
+                entity.HasIndex(e => e.Email, "UQ__Users__A9D10534CE736AFA")
                     .IsUnique();
 
-                entity.HasIndex(e => e.MobileNo, "UQ__Users__D7B19EFA8FC9FDE8")
+                entity.HasIndex(e => e.MobileNo, "UQ__Users__D7B19EFA07032F1C")
                     .IsUnique();
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
@@ -248,7 +250,7 @@ namespace VehicleLoanAPI.Models
             modelBuilder.Entity<VehicleDetail>(entity =>
             {
                 entity.HasKey(e => e.VehicleId)
-                    .HasName("PK__Vehicle___F2947BC168B599C1");
+                    .HasName("PK__Vehicle___F2947BC1C1E740D8");
 
                 entity.ToTable("Vehicle_details");
 

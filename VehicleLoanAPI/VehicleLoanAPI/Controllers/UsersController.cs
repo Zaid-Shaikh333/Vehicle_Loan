@@ -103,5 +103,27 @@ namespace VehicleLoanAPI.Controllers
         {
             return _context.Users.Any(e => e.UserId == id);
         }
+
+       /* public IActionResult checkLogin(string useremail, string userpassword)
+        {
+            try
+            {
+                var result = _context.Users.Where(x => x.Email == useremail).FirstOrDefault();
+                var pass = _context.Users.Where(x => x.Password == userpassword).FirstOrDefault();
+                if (result != null && pass != null)
+                {
+                    return Ok("Success");
+                }
+                else
+                {
+                    return Ok("Invalid");
+                }
+            }
+            catch (Exception e)
+            {
+                return Ok(e);
+            }
+        }*/
+
     }
 }

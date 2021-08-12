@@ -37,25 +37,30 @@
   <table id="table">
     <tr>
       <th> INDEX </th>
-      <th> Application ID</th>
-      <th> LOAN TYPE </th>
-      <th> EMI </th>
+      <th> Name</th>
+      <th> Manufacturer </th>
+      <th> Vehicle Type </th>
+      <th>Vehicle Model</th>
       <th> INTEREST RATE (%) </th>
+      <th>Monthly EMI</th>
       <th> LOAN AMOUNT </th>
-      <th> PROCESSING FEE </th>
       <th> TENURE </th>
-      <th> LOAN STATUS </th>
-      <th> APPLICATION STATUS </th>
+      <th> Start Date </th>
+      <th> End Date </th>
     </tr>
     <tr *ngFor="let c of clients; let i = index;">
       <td> {{i + 1}}</td>
-      <td> {{c.applicationId}}</td>
-      <td> {{c.userId}}</td>
-      <td> {{c.vehicleId }}</td>
-      <td> {{c.loanId}}</td>
-      <td> {{c.adminId}}</td>
-      <td> {{c.status}}</td>
-      <td> {{c.description}}</td>
+      <td>{{c.first_name}} {{c.last_name}}</td>
+      <td>{{c.manufacturer}}</td>
+      <td> {{c.vehicle_type}}</td>
+      <td> {{c.vehicle_model}}</td>
+      <td> {{c.rate_of_interest}}</td>
+      <td> {{c.monthly_emi}}</td>
+      <td> {{c.loan_amount}}</td>
+      <td> {{c.loan_tenure}}</td>
+      <td> {{c.start_date}}</td>
+      <td> {{c.end_date}}</td>
+
     </tr>
   </table>
 </div>

@@ -35,29 +35,36 @@
     </div>
     <table id = "table">
         <tr>
-          <th> LOAN ID</th>
-          <th> LOAN TYPE </th>
-          <th> EMI </th>
-          <th> INTEREST RATE (%) </th>
-          <th> LOAN AMOUNT </th>
-          <th> PROCESSING FEE </th>
-          <th> TENURE </th>
-          <th> LOAN STATUS </th>
-          <th> APPLICATION STATUS </th>
+          <th>ID</th>
+          <th> Name</th>
+          <th> Age </th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Manufacturer</th>
+          <th>Vehicle</th>
+          <th>Ex-Showroom Price</th>
+          <th>Loan Amount</th>
+          <th>Loan Tenure</th>
+          <th>ROI</th>
+          <th>Status</th>
         </tr>
-      <!--<tr *ngFor = "let user of AllPendingUserList;"> 
-        <td> {{user.loanId}} </td> 
-        <td> {{user.loantype}} </td>
-        <td> {{user.emi}} </td> 
-        <td> {{user.interestRate}}% </td>
-        <td> {{user.loanAmount}} </td>
-        <td> {{user.processingFee}} </td>
-        <td> {{user.tenure}} </td>
-        <td> {{user.loanStatus}} </td>
-        <td> {{user.applicationStatus}} </td>
-        <td> <input type = "button" class="accept" (click)="approveLoan(user.loanId)" value="Accept"> </td>
-        <td> <input type = "button" class="reject" (click)="rejectLoan(user.loanId)" value="Reject"> </td>
-      </tr>-->
+        <tr *ngFor="let user of clients; let i = index;">
+          <td> {{i + 1}}</td>
+        <td> {{user.first_name}} {{user.last_name}}</td> 
+        <td> {{user.age}} </td>
+        <td> {{user.gender}} </td> 
+        <td> {{user.email}} </td>
+        <td>{{user.address}} {{user.city}} {{user.state}} {{user.pincode}}</td>
+        <td>{{user.manufacturer}}</td>
+        <td>{{user.vehicle_type}} {{user.vehicle_model}}</td>
+        <td>{{user.exshowroom_price}}</td>
+        <td> {{user.loan_amount}} </td>
+        <td> {{user.loan_tenure}} </td>
+        <td> {{user.rate_of_interest}}% </td>
+        <td> <input type = "button" class="accept" (click)="approveLoan()" value="Accept"> 
+         <input type = "button" class="reject" (click)="rejectLoan()" value="Reject"> </td>
+      </tr>
       </table>
 </div>
 

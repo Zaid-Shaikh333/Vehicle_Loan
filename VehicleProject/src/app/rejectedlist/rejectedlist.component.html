@@ -25,3 +25,27 @@
         </div>
       </nav>
 </div>
+<div class="container">
+  <div class="row">
+    <br><br>
+    <h1 class="text" style="font-size: 25px;">Client List</h1>
+    <hr style="width:70%">
+    <p class="text" style="color: grey; font-size: 15px;">List of all approved users.
+    <p> <br>
+  </div>
+  <table id="table">
+    <tr>
+      <th> INDEX </th>
+      <th> Name</th>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor="let c of clients; let i = index;">
+      <td> {{i + 1}}</td>
+      <td>{{c.first_name}}{{c.last_name}}</td>
+      <td>{{c.status}}</td>
+      <td> {{c.description}}</td>
+
+    </tr>
+  </table>
+</div>

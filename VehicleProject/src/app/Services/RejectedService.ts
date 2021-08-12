@@ -5,17 +5,17 @@ import { Viewclients } from "../Models/Viewclients";
 
 
 @Injectable({providedIn:"root"})
-export class ViewClientsService
+export class RejectedService
 {
     constructor(private http:HttpClient)
     { 
     }
 
-    readonly uri="http://localhost:23810/api/approval";
+    readonly uri="http://localhost:23810/api/rejected";
 
 
-    //calling GetVehicleDetails() method from api
-    GetApproved_Applications()
+    //calling  method from api
+    GetRejected_Applications()
     {
         //debugger;
         return this.http.get(this.uri);

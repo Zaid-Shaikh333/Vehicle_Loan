@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VehicleLoanAPI.Models;
+using VehicleLoanAPI.Service;
 
 namespace VehicleLoanAPI
 {
@@ -39,6 +40,8 @@ namespace VehicleLoanAPI
             services.AddDbContext<Vehicle_LoanContext>(options =>
      options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors();
+
+            services.AddScoped<IAdminRepository, AdminService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
