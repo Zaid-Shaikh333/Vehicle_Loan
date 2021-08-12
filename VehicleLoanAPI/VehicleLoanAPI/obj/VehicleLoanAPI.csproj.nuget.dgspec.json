@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj": {}
+    "C:\\Users\\admin\\Desktop\\Project\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj": {
+    "C:\\Users\\admin\\Desktop\\Project\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Desktop\\Project\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj",
         "projectName": "VehicleLoanAPI",
-        "projectPath": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj",
-        "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleLoanAPI\\VehicleLoanAPI\\obj\\",
+        "projectPath": "C:\\Users\\admin\\Desktop\\Project\\VehicleLoanAPI\\VehicleLoanAPI\\VehicleLoanAPI.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\Desktop\\Project\\VehicleLoanAPI\\VehicleLoanAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
