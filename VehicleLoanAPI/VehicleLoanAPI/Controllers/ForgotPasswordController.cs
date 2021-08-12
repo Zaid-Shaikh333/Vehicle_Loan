@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +72,18 @@ namespace VehicleLoanAPI.Controllers
                 return 0;
             }
 
+        }
+        [Route("UpdateUserPassword")]
+        [HttpPut]
+        public dynamic UpdatePassword(string email, string password)
+        {
+            //var query = from user in tblUser where user.email == email select user;
+            var query = db.Users.Find(email);
+            query.Password = password;
+            db.Entry(query).State = EntityState.Modified;
+            db.SaveChanges();
+            // return Request.CreateResponse(HttpStatusCode.OK, "Valid");
+            return Ok("Valid");
         }
     }
 }

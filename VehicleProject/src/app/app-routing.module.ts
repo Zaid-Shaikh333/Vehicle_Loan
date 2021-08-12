@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { EmicalculatorComponent } from './emicalculator/emicalculator.component';
+import { HomepageComponent } from './homepage/homepage.component';
 import { PendingapplicationsComponent } from './pendingapplications/pendingapplications.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RejectedlistComponent } from './rejectedlist/rejectedlist.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path:'pending',component:PendingapplicationsComponent},
   {path:'viewall',component:ViewClientsComponent},
   {path:'reject',component:RejectedlistComponent},
-
+  {path:'homepage',component:HomepageComponent},
 ];
 
 @NgModule({

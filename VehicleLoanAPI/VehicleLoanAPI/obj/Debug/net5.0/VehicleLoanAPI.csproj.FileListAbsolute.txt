@@ -135,3 +135,4 @@ C:\Users\Anita\Desktop\Vehicle Loan\VehicleLoanAPI\VehicleLoanAPI\obj\Debug\net5
 C:\Users\Anita\Desktop\Vehicle Loan\VehicleLoanAPI\VehicleLoanAPI\obj\Debug\net5.0\ref\VehicleLoanAPI.dll
 C:\Users\Anita\Desktop\Vehicle Loan\VehicleLoanAPI\VehicleLoanAPI\obj\Debug\net5.0\VehicleLoanAPI.pdb
 C:\Users\Anita\Desktop\Vehicle Loan\VehicleLoanAPI\VehicleLoanAPI\obj\Debug\net5.0\VehicleLoanAPI.genruntimeconfig.cache
+C:\Users\Anita\Desktop\Vehicle Loan\VehicleLoanAPI\VehicleLoanAPI\obj\Debug\net5.0\VehicleLoanAPI.csproj.AssemblyReference.cache

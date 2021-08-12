@@ -121,10 +121,10 @@ namespace VehicleLoanAPI.Controllers
                 return BadRequest(e);
             }
 
-            _context.Documents.Add(document);
+            /*_context.Documents.Add(document);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDocument", new { id = document.DocumentsId }, document);
+            return CreatedAtAction("GetDocument", new { id = document.DocumentsId }, document);*/
         }
 
         /*[HttpPost,DisableRequestSizeLimit]
