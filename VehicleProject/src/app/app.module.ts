@@ -18,7 +18,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
-import { LoanOffersComponent } from './loan-offers/loan-offers.component';
+import { EligibilityComponent } from './eligibility/eligibility.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -35,7 +36,7 @@ import { LoanOffersComponent } from './loan-offers/loan-offers.component';
     PendingapplicationsComponent,
     UserdashboardComponent,
     VehicleloanComponent,
-    LoanOffersComponent
+    EligibilityComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +48,7 @@ import { LoanOffersComponent } from './loan-offers/loan-offers.component';
     MatInputModule,
     MatStepperModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
