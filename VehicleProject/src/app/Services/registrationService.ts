@@ -9,7 +9,7 @@ export class registrationService
     {
        
     }
-    readonly uri="http://localhost:52677/api/users";
+    readonly uri="http://localhost:23810/api/users";
 
     //calling GetVehicleDetails() method from api
     GetUser(user:registration)

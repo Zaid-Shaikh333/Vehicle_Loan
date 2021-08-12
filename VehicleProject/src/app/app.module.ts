@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import { EligibilityComponent } from './eligibility/eligibility.component';
 import { FormsModule } from '@angular/forms';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     PendingapplicationsComponent,
     UserdashboardComponent,
     VehicleloanComponent,
-    EligibilityComponent
+    EligibilityComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,

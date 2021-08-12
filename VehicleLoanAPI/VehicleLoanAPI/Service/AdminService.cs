@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,12 @@ namespace VehicleLoanAPI.Service
         {
             dynamic rejected = await db.Rejected_Applications.FromSqlRaw("[dbo].[rejected_applications]").ToListAsync();
             return rejected;
+        }
+
+        public async Task<List<UserLogin>> GetLogin(string email, string password)
+        {
+            dynamic login = await db.UserLogins.FromSqlRaw("[dbo].[user_login] {0},{1}",email,password).ToListAsync();
+            return login;
         }
     }
 }

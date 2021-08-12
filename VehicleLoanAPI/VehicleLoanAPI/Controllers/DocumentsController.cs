@@ -30,10 +30,10 @@ namespace VehicleLoanAPI.Controllers
         }
 
         // GET: api/Documents/5
-        [HttpGet("{id}")]
+        /*[HttpGet("{id}")]
         public async Task<ActionResult<Document>> GetDocument(int id)
         {
-            dynamic document = await _context.Documents.Where(d => d.UserId == id).Select(d => new { d.AadharCard, d.PanCard, d.SalarySlip, d.Photo }).ToListAsync();
+            List<string> document = await _context.Documents.Where(d => d.UserId == id).Select(d => new { d.AadharCard, d.PanCard, d.SalarySlip, d.Photo }).ToListAsync();
             //var document = await _context.Documents.FindAsync(id);
 
             if (document == null)
@@ -42,7 +42,7 @@ namespace VehicleLoanAPI.Controllers
             }
 
             return document;
-        }
+        }*/
 
         // PUT: api/Documents/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

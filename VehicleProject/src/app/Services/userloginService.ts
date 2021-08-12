@@ -9,13 +9,14 @@ export class userloginService
     {
        
     }
-    readonly uri="http://localhost:52677/api/users";
+    readonly uri="http://localhost:23810/api/Login";
 
     //calling GetVehicleDetails() method from api
     GetUser(user:userlogin)
     {
         //debugger;
-        return this.http.post(this.uri,user);
+        return this.http.get(this.uri+"?email="+user.email+"&password="+user.password);
+        
     }
     
     

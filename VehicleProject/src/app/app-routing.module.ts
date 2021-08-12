@@ -11,7 +11,7 @@ import { VehicleloanComponent } from './vehicleloan/vehicleloan.component';
 import { ViewClientsComponent } from './view-clients/view-clients.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/admindash',pathMatch:'full'},
+  //{path:'',redirectTo:'/admindash',pathMatch:'full'},
   {path:'login',component:UserloginComponent},
   {path:'register',component:RegistrationComponent},
   {path:'admindash',component:AdmindashboardComponent},

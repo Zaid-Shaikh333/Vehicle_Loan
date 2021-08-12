@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { userlogin } from '../Models/userlogin';
+import { userloginService } from '../Services/userloginService';
 
 
 @Component({
@@ -9,18 +11,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UserloginComponent implements OnInit {
 
-  userlogin: FormGroup;
-
-  constructor() {
+  
+userlogin: FormGroup;
+  
+  constructor(private ulservice:userloginService) {
     this.userlogin = new FormGroup({
-      email:new FormControl(null,Validators.required),
-      password:new FormControl(null,Validators.required)
-    })
+      email:new FormControl('',Validators.required),
+      password:new FormControl('',Validators.required)
+    });
    }
 
+ngOnInit() {
+  //this.onSubmit();
+}
 
-   
-  ngOnInit(): void {
-  }
+login:userlogin={};
+onSubmit() {
+ debugger; //this.signupForm.get('user_name').value
+this.ulservice.GetUser(this.userlogin.value).subscribe((data) => {console.table(data); this.login = data});
+}
 
 }

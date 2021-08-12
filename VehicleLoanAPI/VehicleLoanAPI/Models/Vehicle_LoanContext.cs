@@ -27,6 +27,7 @@ namespace VehicleLoanAPI.Models
         public virtual DbSet<approved_applications> Approved_Applications { get; set; }
         public virtual DbSet<pending_applications> Pending_Applications { get; set; }
         public virtual DbSet<rejected_applications> Rejected_Applications { get; set; }
+        public virtual DbSet<UserLogin> UserLogins { get; set; }
 
         /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
          {

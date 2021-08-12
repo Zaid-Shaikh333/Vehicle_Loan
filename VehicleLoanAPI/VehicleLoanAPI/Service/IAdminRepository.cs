@@ -12,6 +12,7 @@ namespace VehicleLoanAPI.Service
         public Task<List<pending_applications>> GetPending_Applications();
         public Task<List<approved_applications>> GetApproved_Applications();
         public Task<List<rejected_applications>> GetRejected_Applications();
+        public Task<List<UserLogin>> GetLogin(string email, string password);
 
     }
 }
