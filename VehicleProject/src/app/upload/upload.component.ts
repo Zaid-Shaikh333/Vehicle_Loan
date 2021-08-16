@@ -28,10 +28,14 @@ export class UploadComponent implements OnInit {
     if (files.length === 0) {
       return;
     }
-    let fileToUpload = <File>files[0];
+    let filesToUpload : File[] = files;
     const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-    this.http.post('http://localhost:23810/api/documents', formData, {reportProgress: true, observe: 'events'})
+    
+  Array.from(filesToUpload).map((file, index) => {
+    return formData.append('file'+index, file, file.name);});
+   
+    //const filename =file.name;
+    this.http.post('http://localhost:23810/api/document', formData, {reportProgress: true, observe: 'events'})
       .subscribe(event => {
         if (event.type === HttpEventType.UploadProgress){
         if (event.total) {  
@@ -40,10 +44,38 @@ export class UploadComponent implements OnInit {
         }
         else  {
           this.message = 'Upload success.';
+          alert("uploaded");
+        //  debugger;
+          //console.log(filename);
           //this.onUploadFinished.emit(event.body);
         }
       }
       });
   }
+  /*
+  public uploadFile = (files?:any) => {
+    if (files.length === 0) {
+      return;
+    }
+
+    let fileToUpload = <File>files[0];
+    const formData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
+    debugger;
+    const filename =fileToUpload.name;
+    this.http.post('//localhost:5000/api/Upload', formData, {reportProgress: true, observe: 'events'})
+      .subscribe(event => {
+        
+        if (event.type === HttpEventType.Response) {
+          this.messageupload = 'Upload success.';
+          debugger;
+          this.onUploadFinished.emit(event.body);
+          alert("uploaded");
+          debugger;
+          console.log(filename);
+        }
+      });
+  }
+}*/
   
 }
