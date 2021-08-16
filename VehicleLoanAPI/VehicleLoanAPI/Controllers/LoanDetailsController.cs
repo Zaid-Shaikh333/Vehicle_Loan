@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VehicleLoanAPI.Models;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace VehicleLoanAPI.Controllers
 {
@@ -14,10 +16,15 @@ namespace VehicleLoanAPI.Controllers
     public class LoanDetailsController : ControllerBase
     {
         private readonly Vehicle_LoanContext _context;
+        private readonly Vehicle_LoanContext db;
 
-        public LoanDetailsController(Vehicle_LoanContext context)
+
+        public LoanDetailsController(Vehicle_LoanContext context, Vehicle_LoanContext context1
+)
         {
             _context = context;
+            db = context1;
+
         }
 
         // GET: api/LoanDetails
@@ -29,9 +36,20 @@ namespace VehicleLoanAPI.Controllers
 
         // GET: api/LoanDetails/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<LoanDetail>> GetLoanDetail(int id)
+        public List<LoanDetail> Getvehicledetails1(int id)
         {
-            var loanDetail = await _context.LoanDetails.FindAsync(id);
+            var loanDetail = db.LoanDetails.Where(x => x.UserId == id).ToList();
+
+            return loanDetail;
+
+
+
+        }
+
+        /*[HttpGet("{id}")]
+        public async Task<ActionResult>> GetSchedule(int id)
+        {
+            dynamic loanDetail = await _context.LoanDetails.Where(u => u.UserId == id).ToListAsync();
 
             if (loanDetail == null)
             {
@@ -39,7 +57,7 @@ namespace VehicleLoanAPI.Controllers
             }
 
             return loanDetail;
-        }
+        }*/
 
         // PUT: api/LoanDetails/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -102,6 +120,29 @@ namespace VehicleLoanAPI.Controllers
         private bool LoanDetailExists(int id)
         {
             return _context.LoanDetails.Any(e => e.LoanId == id);
+        }
+
+        [HttpPut]
+        [Route("{LoanId}/{Status}")]
+        public IActionResult Put(int LoanId, string Status)
+        {
+            try
+            {
+                //nodes collection is an in memory list of nodes for this example
+                /*(from cl in _context.Claims
+                 where cl.ClaimNumber == claimNumber
+                 select cl).First().ApprovalStatus = status;*/
+                (from l in _context.LoanDetails
+                 where l.LoanId == LoanId
+                 select l).First().Status = Status;
+                _context.SaveChanges();
+                               
+                return Ok("Updated!!");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
         }
     }
 }

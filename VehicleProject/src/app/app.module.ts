@@ -21,6 +21,14 @@ import {MatListModule} from '@angular/material/list';
 import { EligibilityComponent } from './eligibility/eligibility.component';
 import { FormsModule } from '@angular/forms';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { EmischedulerComponent } from './emischeduler/emischeduler.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { EmployementDetailsComponent } from './employement-details/employement-details.component';
+import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -38,7 +46,15 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     UserdashboardComponent,
     VehicleloanComponent,
     EligibilityComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    HomepageComponent,
+    AdminloginComponent,
+    AboutusComponent,
+    EmischedulerComponent,
+    VehicleDetailsComponent,
+    EmployementDetailsComponent,
+    LoanDetailsComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

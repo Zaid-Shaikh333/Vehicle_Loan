@@ -1,9 +1,9 @@
+
 .jumbotron {
   position: relative;
-  background: rgb(14, 80, 124) url("https://s14.postimg.org/brfoy05nl/homeloan.jpg") center center;
   width: 100%;
-  background-size: cover;
-  overflow: hidden;
+  color: black;
+  font-weight: bolder;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -27,7 +27,7 @@ margin: 0;
 .form-group{
 
 width: fit-content;
-margin: 1rem 0rem 1rem 5rem;
+margin: 0rem 0rem 1rem 5rem;
 }
 
 label{
@@ -36,25 +36,75 @@ font-size: 1.5rem;
 }
 input{
   border-width: 0px 0px 2px 0px solid black;
-  font-size: 1.5rem;
-  width: 60%;
 }
 .container {
-  border-radius: 10px;
+  border:1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 black;
   width: 50%;
-  height: 70%;
   padding: 20px;
+  padding-bottom: 10%;
   border: 1px solid #0e0c0c;
-  background-color: aliceblue;
+  background-color:white;
+ font-family: 'Lora', serif;;
   
 }
-.form-group input {
-  height: 4rem;
+/*.form-group input {
+  height: 8rem;
   width: 48rem;
   border-width: 0px 0px 2px 0px solid black;
-}
+}*/
 .input-group input {
-  height: 4rem;
+  height: 2rem;
   width: 50rem;
   border-width: 0px 0px 2px 0px solid black;
+}
+li a:hover{
+  background-color: white;
+  color:rgb(14, 80, 124);
+  font-weight: bold;  
+}
+li a{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  transition: 0.5s ease-in;
+  text-decoration: none;
+  color: white;
+  padding-right: 10px;
+  
+  font-size: 1.6rem;
+
+}
+.navbar{
+  background-color: rgb(14, 80, 124);
+  margin-bottom: 10px;
+}
+.navbar-brand{
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+}
+i{
+  font-size: 2.5rem;
+  color: white;
+  margin-right: 1rem;
+  padding-right: 1rem;
+}
+
+.btn{
+  float: right;
+  margin: 7px 5px 7px 5px;
+  width: 10rem;
+  font-weight: bold;
+  
+  transition: 0.25s;
+  
+}
+.btn:hover{
+  box-shadow: 0 0 12px 0 #d9edf7;
+}
+.custom-footer{
+    position: relative;
+  margin-top: 50px;
+  background: rgb(14, 80, 124);
+  color: white;  
 }

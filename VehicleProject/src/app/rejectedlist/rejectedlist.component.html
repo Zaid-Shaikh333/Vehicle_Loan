@@ -38,13 +38,11 @@
       <th> INDEX </th>
       <th> Name</th>
       <th>Status</th>
-      <th>Description</th>
     </tr>
     <tr *ngFor="let c of clients; let i = index;">
       <td> {{i + 1}}</td>
       <td>{{c.first_name}}{{c.last_name}}</td>
       <td>{{c.status}}</td>
-      <td> {{c.description}}</td>
 
     </tr>
   </table>

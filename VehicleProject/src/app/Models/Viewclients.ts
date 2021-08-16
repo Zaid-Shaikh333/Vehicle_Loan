@@ -8,7 +8,7 @@ export class Viewclients{
          vehicle_model ?:string;
          loan_amount ?:number;
          loan_tenure ?:number;
-         start_date ?:string;
+         start_date ?:Date;
          end_date ?:string;
          rate_of_interest ?:number;
          monthly_emi ?:number;

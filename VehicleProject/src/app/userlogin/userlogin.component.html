@@ -33,13 +33,12 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" (click)="onSubmit()" class="btn btn-outline-primary" [disabled]="!userlogin.valid" >Login</button>
-                <button  class="btn btn-outline-danger"><a routerLink="/register">Register</a></button>
+                <button type="submit" (click)="onSubmit()" class="btn btn-outline-primary" [disabled]="!userlogin.valid" >
+                    <a >Login</a></button>&nbsp;&nbsp;
+                <button  routerLink="/register" class="btn btn-outline-success">Register</button>
+                <p><a routerLink="/forgotpassword">Forgot password?</a></p>
             </div>
             <!-- routerLink="/userdash"-->
         </form>
     </div>
 
-<div class="col-md-3"></div>
-<h1>{{login.email}}</h1>
-<h1>{{login.password}}</h1>

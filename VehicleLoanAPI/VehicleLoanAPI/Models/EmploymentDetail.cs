@@ -12,6 +12,7 @@ namespace VehicleLoanAPI.Models
         public long? AnnualSalary { get; set; }
         public long? Emi { get; set; }
         public long? OtherIncome { get; set; }
+        public int EmployementId { get; set; }
 
         public virtual User User { get; set; }
     }

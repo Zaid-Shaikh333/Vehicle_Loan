@@ -1,14 +1,30 @@
-<div >
-  <nav class="navbar navbar-expand-lg ">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a class="navbar-brand" href="#">
-              <i class="fas fa-car"></i>                 
-          </a>
-        </div>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">            
+              <a class="navbar-brand" href="#">
+                  <i class="fas fa-car"></i>                 
+              </a>              
+        <ul class="nav navbar-nav">
+          <li ><a routerLink="/viewall">Clients</a></li>
+          <li><a routerLink="/pending">Applications</a></li>
+          <li><a routerLink="/reject">Rejected List</a></li>     
+        </ul>        
+        <div class="collapse navbar-collapse dorpdown-class" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle custom-bg text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Settings
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">View Profile</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>      
       </div>
     </nav>
-  </div>
+</div>
 <div class="container">
     <img src="./assets/CarLoanOffer.jfif" width="100%" >
     <div class="offer-cards">
@@ -17,9 +33,9 @@
         <img class="card-img-top" src="./assets/2wheeler.jfif" alt="Card image"  >
         <h4 class="card-title">Two Wheeler's</h4>
         <p class="card-text">Claim As Low As <b>6%</b> Interest Rate With Discount of <b>5%</b></p>
-        <a href="#" class="btn btn-primary">Apply Now</a>
+        <a routerLink="/vehicleloan" class="btn btn-primary">Apply Now</a>
         <p class="card-text">Claim As Low As <b>8%</b> Interest Rate With Discount of <b>10%</b></p>
-        <a href="#" class="btn btn-primary">Apply Now</a>
+       <button class="btn btn-primary"><a routerLink="/homepage">Apply Now</a></button>
       </div>
     </div>
     <br>
@@ -29,9 +45,9 @@
         <img class="card-img-bottom" src="./assets/4wheeler.jfif" alt="Card image" >
         <h4 class="card-title">Four Wheeler's</h4>
         <p class="card-text">Claim As Low As <b>6%</b> Interest Rate With Discount of <b>5%</b></p>
-        <a href="#" class="btn btn-primary">Apply Now</a>
+        <a routerLink="/vehicleloan" class="btn btn-primary">Apply Now</a>
         <p class="card-text">Claim As Low As <b>8%</b> Interest Rate With Discount of <b>10%</b></p>
-        <a href="#" class="btn btn-primary">Apply Now</a>
+        <a routerLink="/vehicleloan" class="btn btn-primary">Apply Now</a>
       </div>
     </div>
 
@@ -40,9 +56,9 @@
         <img class="card-img-bottom" src="./assets/transport.jfif" alt="Card image" >
         <h4 class="card-title">Transport</h4>
         <p class="card-text">Claim As Low As <b>6%</b> Interest Rate With Discount of <b>5%</b></p>
-        <a href="#" class="btn btn-primary">Apply Now</a>
+        <a routerLink="/vehicleloan" class="btn btn-primary">Apply Now</a>
         <p class="card-text">Claim As Low As <b>8%</b> Interest Rate With Discount of <b>10%</b></p>
-        <a href="#" class="btn btn-primary">Apply Now</a>
+        <a routerLink="/vehicleloan" class="btn btn-primary">Apply Now</a>
       </div>
     </div>
     </div>

@@ -1,6 +1,7 @@
 import {HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { Loan } from "../Models/Loanmodel";
 import { Viewclients } from "../Models/Viewclients";
 
 
@@ -12,6 +13,7 @@ export class RejectedService
     }
 
     readonly uri="http://localhost:23810/api/rejected";
+    readonly uri2="http://localhost:23810/api/loandetails";
 
 
     //calling  method from api
@@ -20,6 +22,9 @@ export class RejectedService
         //debugger;
         return this.http.get(this.uri);
     }
-    
+    SetRejected_Applications(id:any,status:"Rejected",lm:Loan)
+    {
+        return this.http.put(this.uri2+"/"+id+"/"+status,lm);
+    }
     
 }

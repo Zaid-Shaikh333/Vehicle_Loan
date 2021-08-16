@@ -10,8 +10,8 @@ export class LoanServices {
     readonly uri = "http://localhost:23810/api/loandetails";
 
 
-    getloan() {
-        return this.http.get(this.uri);
+    getloan(id:any) {
+        return this.http.get(this.uri+"/"+id);
     }
 
     insertloan(loan: Loan) {

@@ -27,7 +27,7 @@ namespace VehicleLoanAPI.Controllers
             return await _context.EmploymentDetails.ToListAsync();
         }
 
-       /* // GET: api/EmploymentDetails/5
+        // GET: api/EmploymentDetails/5
         [HttpGet("{id}")]
         public async Task<ActionResult<EmploymentDetail>> GetEmploymentDetail(int id)
         {
@@ -102,6 +102,6 @@ namespace VehicleLoanAPI.Controllers
         private bool EmploymentDetailExists(int id)
         {
             return _context.EmploymentDetails.Any(e => e.EmployementId == id);
-        }*/
+        }
     }
 }

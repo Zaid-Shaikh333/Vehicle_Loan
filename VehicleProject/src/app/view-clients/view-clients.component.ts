@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ViewClientsService } from '../Services/ViewclientsService';
 
@@ -21,7 +22,8 @@ export class ViewClientsComponent implements OnInit {
 
 
   clients: any;
-
+date:any;
+edate:any;
 
   ngOnInit() {
     /*this.adminName=sessionStorage.getItem('adminName');
@@ -36,7 +38,15 @@ export class ViewClientsComponent implements OnInit {
 }
 fetchData() {
  // debugger;
-  this.uservice.GetApproved_Applications().subscribe((data) => {console.table(data); this.clients = data});
+  this.uservice.GetApproved_Applications().subscribe((data) => {console.table(data); this.clients = data;
+    this.date = this.clients[0].start_date;
+
+     this.date = formatDate(this.date, 'yyyy-MM-dd', 'en-US');
+
+     this.edate = this.clients[0].end_date;
+
+     this.edate = formatDate(this.edate, 'yyyy-MM-dd', 'en-US');
+});
 }
 
 }

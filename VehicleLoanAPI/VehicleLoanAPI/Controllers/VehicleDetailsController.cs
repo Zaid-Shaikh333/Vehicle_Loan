@@ -16,10 +16,14 @@ namespace VehicleLoanAPI.Controllers
     {
 
         private readonly Vehicle_LoanContext _context;
+        private readonly Vehicle_LoanContext db;
 
-        public VehicleDetailsController(Vehicle_LoanContext context)
+
+        public VehicleDetailsController(Vehicle_LoanContext context, Vehicle_LoanContext context1
+)
         {
             _context = context;
+            db = context1;
         }
 
         // GET: api/VehicleDetails
@@ -31,16 +35,14 @@ namespace VehicleLoanAPI.Controllers
 
         // GET: api/VehicleDetails/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<VehicleDetail>> GetVehicleDetail(int id)
+        public List<VehicleDetail> Getvehicledetails1(int id)
         {
-            var vehicleDetail = await _context.VehicleDetails.FindAsync(id);
-
-            if (vehicleDetail == null)
-            {
-                return NotFound();
-            }
+            var vehicleDetail = db.VehicleDetails.Where(x => x.UserId == id).ToList();
 
             return vehicleDetail;
+
+
+
         }
 
         // PUT: api/VehicleDetails/5

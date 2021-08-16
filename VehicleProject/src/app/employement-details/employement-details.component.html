@@ -1,0 +1,134 @@
+<div >
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand" routerLink="/homepage">
+                <i class="fas fa-car"></i>                 
+            </a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Loan Details</a>
+              </li>
+              
+              <li class="nav-item">
+                <button>
+                <a class="nav-link" routerLink="/employment">Apply Now</a>
+              </button>
+              </li>
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" >
+                  Settings
+                </a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item " routerLink="/userdash"><i class="fas fa-user-circle">My profile</i></a></li>
+                  <li><a class="dropdown-item" routerLink="/logout"><i class="fas fa-sign-out-alt">Log Out</i></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+<div class="container text-left justify-content-center">
+
+
+    <div id="smart_wizard">
+        <form [formGroup]="employmentform">
+
+            <h1>Employement Details </h1>
+            <div class="form-group ">
+                <label class="text-left"><b> Employement Type </b></label>
+                <div class="input-group">
+                    <select class="form-control input-md" id="purpose" formControlName="employementType"
+                        [(ngModel)]="emp.employementType">
+                        <option value=""placeholder="Select Nature of occupation" selected>Select Nature of occupation</option>
+                            <option>Salaried</option>
+                            <option>Self Employed</option>
+                            <option>Self Employed Professional</option>
+                            <option>Retired</option>
+                         
+                    </select>
+
+                </div>
+            </div>
+
+            <div *ngIf="!employmentform.get('employementType')?.valid &&(employmentform.get('employementType')?.dirty || 
+            employmentform.get('employementType')?.touched)" class="error">
+                <div *ngIf="employmentform.get('employementType')?.errors?.required">
+                    <small class="text-danger">Employement Type is required</small>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="form-group">
+                <label>Salary</label>
+                <div class="input-group">
+
+                    <input type="text" formControlName="annualSalary" placeholder="Enter Salary"
+                        [(ngModel)]="emp.annualSalary">
+                </div>
+            </div>
+
+            <div *ngIf="!employmentform.get('annualSalary')?.valid &&(employmentform.get('annualSalary')?.dirty || employmentform.get('annualSalary')?.touched)"
+                class="error">
+                <div *ngIf="employmentform.get('annualSalary')?.errors?.required">
+                    <small class="text-danger">Salary is required</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Existing EMI amount</label>
+                <div class="input-group">
+
+                    <input type="text" formControlName="emi" placeholder="Enter Existing EMI amount"
+                        [(ngModel)]="emp.emi">
+                </div>
+            </div>
+
+            <div *ngIf="!employmentform.get('emi')?.valid &&(employmentform.get('emi')?.dirty || employmentform.get('emi')?.touched)"
+                class="error">
+                <div *ngIf="employmentform.get('emi')?.errors?.required">
+                    <small class="text-danger">EMI is required</small>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label> Income source amount</label>
+                <div class="input-group">
+
+                    <input type="text" formControlName="otherIncome" placeholder="Enter other income source amount"
+                        [(ngModel)]="emp.otherIncome">
+                </div>
+            </div>
+
+            <div *ngIf="!employmentform.get('otherIncome')?.valid &&(employmentform.get('otherIncome')?.dirty || employmentform.get('otherIncome')?.touched)"
+                class="error">
+                <div *ngIf="employmentform.get('otherIncome')?.errors?.required">
+                    <small class="text-danger">Field is required</small>
+                </div>
+            </div>
+
+            <div class="form-group submit-button">
+
+                <button routerLink="/vehicle" class="btn btn-primary text-center" (click)="addEmp()">Save</button>
+
+            </div>
+
+
+        </form>
+    </div>
+
+</div>

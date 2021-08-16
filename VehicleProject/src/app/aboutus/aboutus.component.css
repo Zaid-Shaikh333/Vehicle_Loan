@@ -1,0 +1,58 @@
+li a:hover{
+    background-color: white;
+    color:rgb(14, 80, 124);
+    font-weight: bold;  
+}
+li a{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: 0.5s ease-in;
+    text-decoration: none;
+    color: white;
+    padding-right: 10px;
+    
+    font-size: 1.6rem;
+
+}
+.navbar{
+    background-color: rgb(14, 80, 124);
+    margin-bottom: 30px;
+}
+.navbar-brand{
+    text-decoration: none;
+    height: 50px;
+    width: 50px;
+}
+i{
+    font-size: 2.5rem;
+    color: white;
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+
+.btn{
+    float: right;
+    margin: 7px 5px 7px 5px;
+    width: 10rem;
+    font-weight: bold;
+    color: rgb(14, 80, 124);
+    transition: 0.25s;
+    
+}
+.btn:hover{
+    box-shadow: 0 0 12px 0 #d9edf7;
+}
+.custom-footer{
+    position: fixed;
+    margin-top: 20px;
+    background: rgb(14, 80, 124);
+    color: white;  
+    width: 100%;
+    bottom: 0;
+}
+.container{
+    width: 70%;
+    border: 1px solid skyblue;
+    box-shadow: 0 0 12px 0 black;
+    border-radius: 10px;
+    margin-top: 90px;
+}

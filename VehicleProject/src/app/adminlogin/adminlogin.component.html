@@ -1,0 +1,42 @@
+<div class="col-md-3"></div>
+    <div class="container text-center custom-card">
+        <h1 class="text-center">Login</h1>
+        <form [formGroup]="adminlogin" >
+            <div class="form-group">
+                <span class="icon">
+                    <i class="fas fa-envelope email"></i>
+                </span>
+                <input type="email" placeholder="Enter Email Id" name="Email" formControlName="email" [(ngModel)]="login.email" required>                      
+            </div>
+
+            <div *ngIf="!adminlogin.get('email')?.valid && 
+            (adminlogin.get('email')?.dirty || adminlogin.get('email')?.touched)
+            " class="error">
+                <div *ngIf="adminlogin.get('email')?.errors?.required">
+                    <small class="text-danger">Email is Required</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="icon">
+                    <i class="fas fa-lock password"></i>
+                </span>
+                <input type="password" placeholder="Enter Password" name="password" formControlName="password" [(ngModel)]="login.password" required>                      
+            </div>
+
+            <div *ngIf="!adminlogin.get('password')?.valid && 
+            (adminlogin.get('password')?.dirty || adminlogin.get('password')?.touched)
+            " class="error">
+                <div *ngIf="adminlogin.get('password')?.errors?.required">
+                    <small class="text-danger">Please Enter your Password</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" (click)="onSubmit()" class="btn btn-outline-primary" [disabled]="!adminlogin.valid">
+                    <a>Login</a></button>
+            </div>
+            <!-- routerLink="/userdash"-->
+        </form>
+    </div>
+

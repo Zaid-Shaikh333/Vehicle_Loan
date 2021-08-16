@@ -58,6 +58,22 @@
                         </label>
                      </div>                                   
                 </div>
+
+                <div class="form-group">              
+                
+                    <span class="icon">
+                        <i class="fas fa-user-clock"></i>
+                    </span>
+                    <input type="number" placeholder="Enter Age" name="age" formControlName="age" [(ngModel)]="user.age" required>
+                
+                </div>
+                <div *ngIf="!registrationform.get('age')?.valid && 
+            (registrationform.get('age')?.dirty || registrationform.get('age')?.touched)
+            " class="error">
+                <div *ngIf="registrationform.get('age')?.errors?.required">
+                    <small class="text-danger">Your Age is Required</small>
+                </div>
+            </div>
             
 
             <div class="form-group">              
@@ -186,7 +202,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit"  class="btn btn-outline-primary" (click)="PostUser()" >Register</button>
+                <button type="submit"  class="btn btn-outline-primary" (click)="PostUser()" >Register
+                    </button>
                 <button  class="btn btn-outline-danger"><a routerLink="/login">Login</a></button>
             </div>        
     </form>

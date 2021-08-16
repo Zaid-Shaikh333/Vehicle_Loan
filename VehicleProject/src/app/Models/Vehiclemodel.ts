@@ -1,8 +1,8 @@
 export class Vehicle {
-    userId?: number;
+    userId: any;
     manufacturer?: string;
     vehicleType?: string;
     vehicleModel?: string;
     exShowroomPrice?: number;
-    vehicleId?: number;
+    vehicleId?: any;
 }

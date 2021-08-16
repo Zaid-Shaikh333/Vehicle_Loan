@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace VehicleLoanAPI.Controllers
         public bool CheckEmail(string email)
         {
             var isValidEmail = db.Users.Where(w => w.Email == email).FirstOrDefault();
-            if (isValidEmail == null)
+            if (isValidEmail != null)
             {
                 return true;
             }
@@ -72,5 +73,27 @@ namespace VehicleLoanAPI.Controllers
             }
 
         }
+
+        public int getid(string email)
+        {
+            User user = new User();
+            user.UserId = db.Users.First(x => x.Email == email).UserId;
+            return user.UserId;
+        }
+
+        [Route("UpdateUserPassword")]
+        [HttpPut]
+        public dynamic UpdatePassword(string email, string password)
+        {
+            //var query = from user in tblUser where user.email == email select user;
+            int id = getid(email);
+            var query = db.Users.Find(id);
+            query.Password = password;
+            db.Entry(query).State = EntityState.Modified;
+            db.SaveChanges();
+            // return Request.CreateResponse(HttpStatusCode.OK, "Valid");
+            return Ok("Valid");
+        }
+
     }
 }

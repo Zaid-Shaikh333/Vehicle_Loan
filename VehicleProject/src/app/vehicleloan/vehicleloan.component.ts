@@ -17,11 +17,14 @@ export class VehicleloanComponent implements OnInit {
 
   title = 'trialvehicleloan';
   isLinear = true;
+  userid=localStorage.getItem('userid');
 
   employmentform: any;
   vehicleform: any;
   loandetailsform: any;
   documentsform: any;
+  sessionvehicleid: any;
+  vehicleidstored = localStorage.getItem('vehicleid');
 
   constructor(private _formBuilder: FormBuilder,private vehicleservice: VehicleService,private loanservice: LoanServices,private empservice: Employmentservices) { }
 
@@ -61,16 +64,26 @@ export class VehicleloanComponent implements OnInit {
     });
   }
   message: any;
-  emp: Employment = {};
-  vehicle: Vehicle = {};
-  loan1: Loan = {};
+  emp: Employment = {userId : this.userid
+};
+  vehicle: Vehicle = {userId : this.userid
+};
+  loan1: Loan = {userId : this.userid,vehicleId: this.vehicleidstored
+};
 
   submit() {
     debugger;
     this.empservice.insertemployment(this.emp).subscribe((data) => this.message = data);
-    this.vehicleservice.insertvehicle(this.vehicle).subscribe((data) => this.message = data);
+    this.vehicleservice.insertvehicle(this.vehicle).subscribe((data) => { this.message = data });
+    /*this.vehicleservice.getvehicle().subscribe((data) => {
+      console.table(data);
+      if (data != null) {
+        this.sessionvehicleid = localStorage.setItem('vehicleid', this.vehicleform.value.vehicleId);
+      }
+    });
     this.loanservice.insertloan(this.loan1).subscribe((data) => this.message = data);
-  }
+  }*/
 
   
+}
 }

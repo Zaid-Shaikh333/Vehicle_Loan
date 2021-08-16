@@ -1,3 +1,4 @@
+
 <div>
   <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">            
@@ -35,7 +36,8 @@
     </div>
     <table id = "table">
         <tr>
-          <th>ID</th>
+          <th>Index</th>
+          <th>LoanId</th>
           <th> Name</th>
           <th> Age </th>
           <th>Gender</th>
@@ -51,6 +53,7 @@
         </tr>
         <tr *ngFor="let user of clients; let i = index;">
           <td> {{i + 1}}</td>
+          <td>{{user.loan_id}}</td>
         <td> {{user.first_name}} {{user.last_name}}</td> 
         <td> {{user.age}} </td>
         <td> {{user.gender}} </td> 
@@ -62,8 +65,8 @@
         <td> {{user.loan_amount}} </td>
         <td> {{user.loan_tenure}} </td>
         <td> {{user.rate_of_interest}}% </td>
-        <td> <input type = "button" class="accept" (click)="approveLoan()" value="Accept"> 
-         <input type = "button" class="reject" (click)="rejectLoan()" value="Reject"> </td>
+        <td> <input type = "button" class="accept" (click)="approveLoan(user.loan_id)" value="Accept"> 
+         <input type = "button" class="reject" (click)="rejectLoan(user.loan_id)" value="Reject"> </td>
       </tr>
       </table>
 </div>

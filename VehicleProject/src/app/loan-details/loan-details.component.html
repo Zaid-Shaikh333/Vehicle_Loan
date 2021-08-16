@@ -1,0 +1,97 @@
+<div >
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand" routerLink="/homepage">
+                <i class="fas fa-car"></i>                 
+            </a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Loan Details</a>
+              </li>
+              
+              <li class="nav-item">
+                <button>
+                <a class="nav-link" routerLink="/employment">Apply Now</a>
+              </button>
+              </li>
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" >
+                  Settings
+                </a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item " routerLink="/userdash"><i class="fas fa-user-circle">My profile</i></a></li>
+                  <li><a class="dropdown-item" routerLink="/logout"><i class="fas fa-sign-out-alt">Log Out</i></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+<div class="container">
+    <form [formGroup]="loandetailsform">    
+        <h3>Loan Details </h3>
+        <div class="form-group">
+            <label>Enter Loan Amount</label>
+            <div class="input-group">
+
+                <input type="text" formControlName="loanAmount" name="loanAmount" [(ngModel)]="loanAmount">
+            </div>
+        </div>
+
+        <div *ngIf="!loandetailsform.get('loanAmount')?.valid &&(loandetailsform.get('loanAmount')?.dirty || loandetailsform.get('loanAmount')?.touched)"
+            class="error">
+            <div *ngIf="loandetailsform.get('loanAmount')?.errors?.required">
+                <small class="text-danger">Loan Amount is required</small>
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label>Loan Tenure </label>
+            <div class="input-button" (change)="selectChangeHandler()">
+
+                <label class="radio-button"><input type="radio" value="60" formControlName="loanTenure" [(ngModel)]="loanTenure"> 5 years</label>
+                <label class="radio-button"><input type="radio" value="120" formControlName="loanTenure" [(ngModel)]="loanTenure"> 10 years</label>
+                <label class="radio-button"><input type="radio" value="180" formControlName="loanTenure" [(ngModel)]="loanTenure"> 15 years</label>
+                <label class="radio-button"><input type="radio" value="240 " formControlName="loanTenure" [(ngModel)]="loanTenure"> 20 years</label>
+            </div>
+        </div>
+
+        <div *ngIf="!loandetailsform.get('loanTenure')?.valid &&(loandetailsform.get('loanTenure')?.dirty || loandetailsform.get('loanTenure')?.touched)"
+            class="error">
+            <div *ngIf="loandetailsform.get('loanTenure')?.errors?.required">
+                <small class="text-danger">Loan Tenure is required</small>
+            </div>
+        </div>
+
+        <div class="row">
+          <label>Aadhar-Card  </label>
+        <input type="file" #file placeholder="Choose file" formControlName="aadhar" (change)="uploadFile(file.files)" style="display:none;" multiple>
+        <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+      </div>
+      <div class="col-md-4">
+          <span class="upload" *ngIf="progress > 0">
+            {{progress}}%
+          </span>
+          <span class="upload" *ngIf="message">
+            {{message}}
+          </span>
+        </div>
+
+        <br>
+        
+
+
+        <br>
+       
+
+        <br>
+        <div class="form-group submit-button">
+            <button class="btn btn-primary" (click)=registerloan() [disabled]="!loandetailsform.valid" >Submit</button>
+        </div>
+
+    </form>
+</div>

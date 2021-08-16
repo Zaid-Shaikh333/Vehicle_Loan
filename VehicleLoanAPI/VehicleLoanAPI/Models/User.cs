@@ -9,8 +9,7 @@ namespace VehicleLoanAPI.Models
     {
         public User()
         {
-            Approvals = new HashSet<Approval>();
-            Documents = new HashSet<Document>();
+            EmploymentDetails = new HashSet<EmploymentDetail>();
             LoanDetails = new HashSet<LoanDetail>();
             VehicleDetails = new HashSet<VehicleDetail>();
         }
@@ -28,8 +27,7 @@ namespace VehicleLoanAPI.Models
         public string State { get; set; }
         public int? Pincode { get; set; }
 
-        public virtual ICollection<Approval> Approvals { get; set; }
-        public virtual ICollection<Document> Documents { get; set; }
+        public virtual ICollection<EmploymentDetail> EmploymentDetails { get; set; }
         public virtual ICollection<LoanDetail> LoanDetails { get; set; }
         public virtual ICollection<VehicleDetail> VehicleDetails { get; set; }
     }

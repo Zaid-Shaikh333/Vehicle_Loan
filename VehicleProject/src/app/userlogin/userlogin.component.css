@@ -48,3 +48,8 @@ i{
 .password{
     color: dodgerblue;
 }
+a{
+    text-decoration: none;
+    margin: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

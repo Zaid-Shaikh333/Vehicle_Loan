@@ -15,7 +15,7 @@ export class registrationService
     GetUser(user:registration)
     {
 
-        //debugger;
+        debugger;
         return this.http.post(this.uri,user);
     }
     

@@ -7,11 +7,6 @@ namespace VehicleLoanAPI.Models
 {
     public partial class LoanDetail
     {
-        public LoanDetail()
-        {
-            Approvals = new HashSet<Approval>();
-        }
-
         public int LoanId { get; set; }
         public int? UserId { get; set; }
         public int? VehicleId { get; set; }
@@ -21,9 +16,10 @@ namespace VehicleLoanAPI.Models
         public DateTime? EndDate { get; set; }
         public decimal? RateOfInterest { get; set; }
         public long? MonthlyEmi { get; set; }
+        public string Status { get; set; }
+        public string Description { get; set; }
 
         public virtual User User { get; set; }
         public virtual VehicleDetail Vehicle { get; set; }
-        public virtual ICollection<Approval> Approvals { get; set; }
     }
 }

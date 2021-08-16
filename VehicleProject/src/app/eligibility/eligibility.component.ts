@@ -6,28 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eligibility.component.css']
 })
 export class EligibilityComponent implements OnInit {
+  disabled?: boolean=true;
   constructor() {}
   ngOnInit(): void {
+    
     
   }
 
   elig?: boolean=false;
   stat?:string;
-  onroadprice:number=0;
-  monthlysavings:number=0;
-  existingemi:number=0;
-  loantenure:number=0;
+  onroadprice?:any;
+  monthlysavings?:any;
+  existingemi?:any;
+  loantenure?:any;
   newemi:number = this.onroadprice/this.loantenure;
   
   checkeligiblity() {
-    debugger;
     if (((this.onroadprice/this.loantenure)+this.existingemi)<=this.monthlysavings)
     {
-      if(this.elig==false)
-      {
-        this.stat="USER IS ELIGIBLE!";
+      this.stat="USER IS ELIGIBLE!";
         alert(this.stat);
-      }
+        this.disabled = !this.disabled;
     }
     else
     {

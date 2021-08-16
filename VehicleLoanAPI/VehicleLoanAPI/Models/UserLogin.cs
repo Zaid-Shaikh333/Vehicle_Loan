@@ -24,9 +24,6 @@ namespace VehicleLoanAPI.Models
         public string state { get; set; }
         public int? pincode { get; set; }
 
-        public virtual ICollection<Approval> Approvals { get; set; }
-        public virtual ICollection<Document> Documents { get; set; }
-        public virtual ICollection<LoanDetail> LoanDetails { get; set; }
-        public virtual ICollection<VehicleDetail> VehicleDetails { get; set; }
+       
     }
 }

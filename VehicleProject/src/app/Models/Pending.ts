@@ -1,6 +1,7 @@
   export class Pending{
         user_id?:number;
         first_name?:string;
+        loan_id?:any;
         last_name?:string;
         age?:number;
         gender?:string;

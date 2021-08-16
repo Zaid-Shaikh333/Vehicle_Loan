@@ -9,8 +9,9 @@ export class VehicleService {
 
     readonly uri = "http://localhost:23810/api/vehicledetails";
 
-    getvehicle() {
-        return this.http.get(this.uri);
+    getvehicle(id:any) {
+        debugger;
+        return this.http.get(this.uri+"/"+id);
     }
 
     insertvehicle(vehicle: Vehicle) {

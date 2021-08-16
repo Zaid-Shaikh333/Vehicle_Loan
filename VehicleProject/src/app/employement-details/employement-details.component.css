@@ -1,0 +1,111 @@
+.container {
+  border:1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 black;
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #0e0c0c;
+  background-color:white;
+ font-family: 'Lora', serif;;
+  
+}
+  
+  .input-group input {
+    height: 3rem;
+    width: 30rem;
+    border-width: 0px 0px 2px 0px solid black;
+  }
+  .input-button input{
+    margin: 1rem;
+  
+  }
+  h1{
+    text-align: center;
+  }
+  #purpose{
+    height: 3rem;
+    width: 30rem;
+    border-width: 0px 0px 2px 0px solid black;
+  }
+  input{
+    border-width: 0px 0px 2px 0px solid black;
+    font-size: 1.5rem;
+  }
+  .error{
+    margin-left: 5px;
+  
+  }
+  
+  .form-group{
+    
+    width: fit-content;
+    margin: 1rem 0rem 1rem 5rem;
+  }
+  label{
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+  
+  small{
+    margin-left: 5rem;
+    font-size: 1.2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  
+  }
+  .submit-button{
+  margin: 5rem;
+  width: 30rem;
+  height: 4rem;
+  left: 60%;
+  text-align: center;
+  
+  
+  }
+  .submit-button button{
+  text-align: center;
+  font-size: 1.5rem;
+  }
+  li a:hover{
+    color:rgb(14, 80, 124); 
+    border-radius: 5px;
+}
+li a{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: 0.5s ease-in;
+    text-decoration: none;
+    color: white;
+    padding-right: 10px;  
+    font-size: 1.6rem;
+    float: left;
+}
+
+.navbar{
+    background-color: rgb(14, 80, 124);
+    margin-bottom: 30px;}
+.nav-item{
+padding-left: 10px;
+}
+.navbar-brand{
+    text-decoration: none;
+    height: 50px;
+    width: 50px;
+}
+.custom-bg{
+    background-color: rgb(14, 80, 124);
+    color: white;
+    text-decoration: none;
+}
+i{
+    font-size: 2.5rem;
+    color: white;
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+.custom-footer{
+    position: fixed;
+    margin-top: 20px;
+    background: rgb(14, 80, 124);
+    color: white;  
+    width: 100%;
+    bottom: 0;
+}

@@ -1,45 +1,115 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
 
-<div class = "container">
-    <br>
-    <h1 class = "text" style = "font-size: 30px; text-align: center; font-weight: 600;">Check Loan Eligibility</h1>
-    <hr style="width: 50%;">
-    <p class = "text" style = "color: grey; font-size: 12px; text-align: center;">Enter your details to check your eligibility for the loan.<p><br> 
-    <form (ngSubmit)=checkeligiblity() ngNativeValidate>
-        <div class = "row">
-        <p class="text" style = "color: #5f866e; font-weight:600; letter-spacing: 1px;"> Enter the Vehical Detail </p>
-        <input type = "text" style="width: 43%" placeholder = "Vehicle Make"/>
-        <input type = "text" style="width: 43%" placeholder="Vehicle Model"/> <br>
-        <input type = "text" style="width: 43%" placeholder = "Ex-Showroom Price"/>
-        <input type = "number" style="width: 43%" name="onroadprice" placeholder="On-Road Price" [(ngModel)]="onroadprice" required/> <br> <br>     
-        <hr style = "height: 2px; border: 0; background-color: rgb(214, 214, 214);"><br>
-        <p class="text" style = "color: #5f866e; font-weight:600; letter-spacing: 1px;"> Enter the Applicant Detail </p>
-        <input type = "text" style="width: 43%" placeholder = "First Name"/>
-        <input type = "text" style="width: 43%" placeholder = "Last Name"/> <br>
-        <input type = "text" style="width: 43%" placeholder = "Age"/>
-        <input type = "text" style="width: 43%" placeholder = "Gender" placeholder = "Type of Employment"/>
-        <input type = "number" style="width: 43%" name="monthlysavings" placeholder = "Monthly Savings (Ex:- 10000)" [(ngModel)]="monthlysavings" required/>
-        <input type = "number" style="width: 43%" name="existingemi" placeholder = "Existing EMI" [(ngModel)]="existingemi" required/> 
-        <input type = "number" style="width: 43%" name="loantenure" placeholder = "Loan Tenure" [(ngModel)]="loantenure" required /><br> <br>
 
-        <hr style = "height: 2px; border: 0; background-color: rgb(214, 214, 214);">
-        <br>
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-car"></i>
 
-        <p class="text" style = "color: #5f866e; font-weight:600; letter-spacing: 1px;"> Enter the Contact Detail </p>
+            </a>
 
-        <input type = "text" style="width: 43%" placeholder = "Mobile Number"/>
-        <input type = "text" style="width: 43%" placeholder = "Email"/> <br> <br> <br>
-    
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a routerLink="/aboutus">About Us</a></li>
+                <li><a routerLink="/emical">EMI calculator</a></li>
+                <li> <a routerLink="/eligible">Check Eligibility</a></li>
+
+
+            </ul>
+            <span>
+                <div class="collapse navbar-collapse dorpdown-class" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle custom-bg login" href="#" id="navbarDarkDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Login
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" routerLink="/login">User</a></li>
+                                <li><a class="dropdown-item" routerLink="/alogin">Admin</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </span>
         </div>
-    <button type="submit" class='btn login'>Check Eligiblity</button><br><br>
-    <p class = "text" style = "color: rgb(68, 68, 68); font-size: 15px; font-weight:600; text-align: center; letter-spacing: 2px;"> {{stat}} </p> <br>   
+    </nav>
+
+</div>
+<div class="container form-control">
+    <br>
+    <h1 class="text" style="font-size: 30px; text-align: center; font-weight: 600;">Check Loan Eligibility</h1>
+    <hr style="width: 100%;">
+    <p class="text" style="color: grey; font-size: 12px; text-align: center;">Enter your details to check your
+        eligibility for the loan.
+    <p><br>
+    <form (ngSubmit)=checkeligiblity() ngNativeValidate>
+        <div class="row">
+            <p class="text" style=" font-weight:600; letter-spacing: 1px;"> Enter the Vehical Detail </p>
+            <div class="row">
+                <div class="col-md-6"><input class="form-control" type="text" placeholder="Vehicle Make" /></div>
+                <div class="col-md-6"><input class="form-control" type="text" placeholder="Vehicle Model" /> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><input type="text" class="form-control" placeholder="Ex-Showroom Price" /></div>
+                <div class="col-md-6"><input type="number" class="form-control" name="onroadprice"
+                        placeholder="On-Road Price" [(ngModel)]="onroadprice" required /></div>
+            </div>
+            <hr style="height: 2px; border: 0; background-color: rgb(214, 214, 214);"><br>
+            <p class="text" style=" font-weight:600; letter-spacing: 1px;"> Enter the Applicant Detail
+            </p>
+            <div class="row">
+                <div class="col-md-6"><input type="text" class="form-control" placeholder="First Name" /></div>
+                <div class="col-md-6"><input type="text" class="form-control" placeholder="Last Name" /> </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6"><input type="text" class="form-control" placeholder="Age" /></div>
+                <div class="col-md-6"><input type="text" class="form-control" placeholder="Gender"
+                        placeholder="Type of Employment" /></div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6"> <input type="number" class="form-control" name="monthlysavings"
+                        placeholder="Monthly Savings (Ex:- 10000)" [(ngModel)]="monthlysavings" required /></div>
+                <div class="col-md-6"> <input type="number" class="form-control" name="existingemi"
+                        placeholder="Existing EMI" [(ngModel)]="existingemi" required /></div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6"><input type="number" name="loantenure" class="form-control"
+                        placeholder="Loan Tenure" [(ngModel)]="loantenure" required /></div>
+            </div>
+
+
+            <hr style="height: 2px; border: 0; background-color: rgb(214, 214, 214);">
+            <br>
+
+            <p class="text" style=" font-weight:600; letter-spacing: 1px;"> Enter the Contact Detail </p>
+            <div class="row">
+                <div class="col-md-6"><input type="text" class="form-control" placeholder="Mobile Number" /></div>
+                <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" /> </div>
+                <div class="col-md-12">
+                    <button type="submit" class='btn login btn-danger'>Check Eligiblity</button>
+                    <button type="submit" class='btn login btn-success' [disabled]="disabled" routerLink="/login">Apply
+                        Now</button>
+                </div>
+            </div>
+
+        </div>
+
+
     </form>
 </div>
-
-<footer class="footer">
-    <br>
-    <p>© New Wheels 2020. All Rights Reserved.<br>
-        <a>Project Gladiator (Larsen & Toubro Infotech Limited)</a></p><br>
-</footer>
-
-
-
+<div>
+    <footer class=" text-center text-lg-start custom-footer" style="margin-top: 60px;">
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            ©️ 2021 Copyright:
+            <a class="text-light" href="#">VehicleLoan.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</div>

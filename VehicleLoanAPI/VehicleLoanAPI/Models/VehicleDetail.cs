@@ -9,7 +9,6 @@ namespace VehicleLoanAPI.Models
     {
         public VehicleDetail()
         {
-            Approvals = new HashSet<Approval>();
             LoanDetails = new HashSet<LoanDetail>();
         }
 
@@ -21,7 +20,6 @@ namespace VehicleLoanAPI.Models
         public int VehicleId { get; set; }
 
         public virtual User User { get; set; }
-        public virtual ICollection<Approval> Approvals { get; set; }
         public virtual ICollection<LoanDetail> LoanDetails { get; set; }
     }
 }

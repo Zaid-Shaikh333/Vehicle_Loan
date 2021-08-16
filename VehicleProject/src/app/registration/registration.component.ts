@@ -1,6 +1,7 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { registration } from '../Models/registration';
 import { registrationService } from '../Services/registrationService';
 
@@ -13,11 +14,13 @@ import { registrationService } from '../Services/registrationService';
 export class RegistrationComponent implements OnInit {
 
   registrationform: FormGroup;
-  constructor(private regservice:registrationService) {
+  constructor(private regservice:registrationService, private router:Router) {
     this.registrationform = new FormGroup({
       FirstName:new FormControl(null,Validators.required),
       LastName:new FormControl(null,Validators.required),
       Gender:new FormControl(null,Validators.required),
+      age:new FormControl(null,Validators.required),
+
       MobileNo:new FormControl(null,Validators.required),
       Email:new FormControl(null,Validators.required),
       Password:new FormControl(null,Validators.required),
@@ -32,10 +35,14 @@ export class RegistrationComponent implements OnInit {
 
   }
 user:registration={};
+
 message:any;
   PostUser()
   {
+    //debugger;
     this.regservice.GetUser(this.user).subscribe((data)=>this.message=data);
+    alert('Registration successful!!!!');
+    this.router.navigate(['login']);
   }
 
 }

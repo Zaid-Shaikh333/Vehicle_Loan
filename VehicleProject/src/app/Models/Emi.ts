@@ -1,5 +1,5 @@
 export class Emi{
-    Principle?:number;
-    Tenure?:number;
-    ROI?:number;
+    Principle?:any;
+    Tenure?:any;
+    ROI?:any;
 }

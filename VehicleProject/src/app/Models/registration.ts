@@ -2,7 +2,7 @@ export class registration{
      UserId? :number;
      FirstName? :string;
      LastName? :string;
-     Age? :number;
+     age? :number;
      Gender? :string;
      MobileNo ?:number;
      Email ?:string;
