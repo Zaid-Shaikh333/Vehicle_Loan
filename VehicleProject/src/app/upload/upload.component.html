@@ -1,0 +1,30 @@
+<form  [formGroup]="documentform">
+    <div class="row">
+        <label>Aadhar-Card  </label>
+      <input type="file" #file placeholder="Choose file" formControlName="aadhar" (change)="uploadFile(file.files)" style="display:none;" multiple>
+      <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+    </div>
+    <div class="col-md-4">
+        <span class="upload" *ngIf="progress > 0">
+          {{progress}}%
+        </span>
+        <span class="upload" *ngIf="message">
+          {{message}}
+        </span>
+      </div>
+    <div class="row">
+        <label>Pan-Card  </label>
+        <input type="file" #file placeholder="Choose file" formControlName="pan" (change)="uploadFile(file.files)" style="display:none;" multiple>
+        <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+      </div>
+      <div class="row">
+        <label>Salary-Slip </label>
+        <input type="file" #file placeholder="Choose file" formControlName="salary"  (change)="uploadFile(file.files)" style="display:none;" multiple>
+        <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+      </div>
+      <div class="row">
+        <label>Photo </label>
+        <input type="file" #file placeholder="Choose file" formControlName="photo"  (change)="uploadFile(file.files)" style="display:none;" multiple>
+        <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+      </div>
+  </form>

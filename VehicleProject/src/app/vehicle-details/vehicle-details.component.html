@@ -1,0 +1,72 @@
+<h1>{{vid1}}</h1>
+<div class="container">
+
+    <form [formGroup]="vehicleform">
+        <h3>Vehicle Details </h3>
+        <div class="form-group">
+            <label>Manufacturer Name</label>
+            <div class="input-group">
+
+                <input type="text" formControlName="manufacturer" [(ngModel)]="vehicle.manufacturer">
+            </div>
+        </div>
+
+        <div *ngIf="!vehicleform.get('manufacturer')?.valid &&(vehicleform.get('manufacturer')?.dirty || vehicleform.get('manufacturer')?.touched)"
+            class="error">
+            <div *ngIf="vehicleform.get('manufacturer')?.errors?.required">
+                <small class="text-danger">Manufacturer Name is required</small>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label>Type of Vehicle</label>
+            <div class="input-button">
+
+                <label><input type="radio" value="2 wheeler" formControlName="vehicleType" [(ngModel)]="vehicle.vehicleType"> Two wheeler</label>
+                <label><input type="radio" value="4 wheeler" formControlName="vehicleType" [(ngModel)]="vehicle.vehicleType"> Four wheeler</label>
+            </div>
+        </div>
+
+        <div *ngIf="!vehicleform.get('vehicleType')?.valid &&(vehicleform.get('vehicleType')?.dirty || vehicleform.get('vehicleType')?.touched)"
+            class="error">
+            <div *ngIf="vehicleform.get('vehicleType')?.errors?.required">
+                <small class="text-danger">Vehicle type is required</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Model Name</label>
+            <div class="input-group">
+
+                <input type="text" formControlName="vehicleModel" [(ngModel)]="vehicle.vehicleModel">
+            </div>
+        </div>
+
+        <div *ngIf="!vehicleform.get('vehicleModel')?.valid &&(vehicleform.get('vehicleModel')?.dirty || vehicleform.get('vehicleModel')?.touched)"
+            class="error">
+            <div *ngIf="vehicleform.get('vehicleModel')?.errors?.required">
+                <small class="text-danger">Model Name is required</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Ex-Showroom Price</label>
+            <div class="input-group">
+
+                <input type="text" formControlName="exShowroomPrice" [(ngModel)]="vehicle.exShowroomPrice">
+            </div>
+        </div>
+
+        <div *ngIf="!vehicleform.get('exShowroomPrice')?.valid &&(vehicleform.get('exShowroomPrice')?.dirty || vehicleform.get('exShowroomPrice')?.touched)"
+            class="error">
+            <div *ngIf="vehicleform.get('exShowroomPrice')?.errors?.required">
+                <small class="text-danger">Ex showroom price is required</small>
+            </div>
+        </div>
+
+        <div class="form-group submit-button">
+            <button routerLink="/loan" class="btn btn-primary" type="submit" (click)="addVehicle()" [disabled]="!vehicleform.valid">Save</button>
+        </div>
+    </form>
+</div>

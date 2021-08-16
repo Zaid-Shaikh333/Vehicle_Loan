@@ -7,14 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VehicleLoanAPI.Models;
 
-
 namespace VehicleLoanAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class VehicleDetailsController : ControllerBase
     {
-
         private readonly Vehicle_LoanContext _context;
 
         public VehicleDetailsController(Vehicle_LoanContext context)

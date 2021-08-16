@@ -1,0 +1,78 @@
+<h1>{{vehicleid}}</h1>
+<div class="container">
+    <form [formGroup]="loandetailsform">    
+        <h3>Loan Details </h3>
+        <div class="form-group">
+            <label>Enter Loan Amount</label>
+            <div class="input-group">
+
+                <input type="text" formControlName="loanAmount" name="loanAmount" [(ngModel)]="loan1.loanAmount">
+            </div>
+        </div>
+
+        <div *ngIf="!loandetailsform.get('loanAmount')?.valid &&(loandetailsform.get('loanAmount')?.dirty || loandetailsform.get('loanAmount')?.touched)"
+            class="error">
+            <div *ngIf="loandetailsform.get('loanAmount')?.errors?.required">
+                <small class="text-danger">Loan Amount is required</small>
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label>Loan Tenure </label>
+            <div class="input-button">
+
+                <label class="radio-button"><input type="radio" value="60" formControlName="loanTenure" [(ngModel)]="loan1.loanTenure"> 5 years</label>
+                <label class="radio-button"><input type="radio" value="120" formControlName="loanTenure" [(ngModel)]="loan1.loanTenure"> 10 years</label>
+                <label class="radio-button"><input type="radio" value="150" formControlName="loanTenure" [(ngModel)]="loan1.loanTenure"> 15 years</label>
+                <label class="radio-button"><input type="radio" value="240 " formControlName="loanTenure" [(ngModel)]="loan1.loanTenure"> 20 years</label>
+            </div>
+        </div>
+
+        <div *ngIf="!loandetailsform.get('loanTenure')?.valid &&(loandetailsform.get('loanTenure')?.dirty || loandetailsform.get('loanTenure')?.touched)"
+            class="error">
+            <div *ngIf="loandetailsform.get('loanTenure')?.errors?.required">
+                <small class="text-danger">Loan Tenure is required</small>
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label>Rate of Interest</label>
+            <div class="input-group">
+
+                <input type="text" formControlName="rateOfInterest" [(ngModel)]="loan1.rateOfInterest">
+            </div>
+        </div>
+
+        <div *ngIf="!loandetailsform.get('rateOfInterest')?.valid &&(loandetailsform.get('rateOfInterest')?.dirty || loandetailsform.get('rateOfInterest')?.touched)"
+            class="error">
+            <div *ngIf="loandetailsform.get('rateOfInterest')?.errors?.required">
+                <small class="text-danger">Rate of Interest is required</small>
+            </div>
+        </div>
+
+
+        <br>
+        <div class="form-group">
+            <label>Enter Start Date</label>
+            <div class="input-group">
+
+                <input type="date" formControlName="startDate" [(ngModel)]="loan1.startDate">
+            </div>
+        </div>
+
+        <div *ngIf="!loandetailsform.get('startDate')?.valid &&(loandetailsform.get('startDate')?.dirty || loandetailsform.get('startDate')?.touched)"
+            class="error">
+            <div *ngIf="loandetailsform.get('startDate')?.errors?.required">
+                <small class="text-danger">Date is required</small>
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group submit-button">
+            <button class="btn btn-primary" (click)=addLoan() [disabled]="!loandetailsform.valid" >Submit</button>
+        </div>
+
+    </form>
+</div>

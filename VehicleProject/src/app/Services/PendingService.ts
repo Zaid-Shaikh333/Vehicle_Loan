@@ -20,6 +20,10 @@ export class PendingService
         //debugger;
         return this.http.get(this.uri);
     }
+    /*SetApproval_Application(id:number,Msg:any)
+    {
+        return this.http.put(this.uri+)
+    }*/
     
     
 }

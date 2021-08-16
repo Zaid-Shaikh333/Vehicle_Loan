@@ -38,5 +38,6 @@ namespace VehicleLoanAPI.Service
             dynamic login = await db.UserLogins.FromSqlRaw("[dbo].[user_login] {0},{1}",email,password).ToListAsync();
             return login;
         }
+       
     }
 }

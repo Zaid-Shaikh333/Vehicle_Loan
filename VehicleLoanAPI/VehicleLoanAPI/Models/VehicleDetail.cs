@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -12,6 +13,7 @@ namespace VehicleLoanAPI.Models
             Approvals = new HashSet<Approval>();
             LoanDetails = new HashSet<LoanDetail>();
         }
+        
 
         public int? UserId { get; set; }
         public string Manufacturer { get; set; }

@@ -22,6 +22,11 @@ import { EligibilityComponent } from './eligibility/eligibility.component';
 import { FormsModule } from '@angular/forms';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { EmischedularComponent } from './emischedular/emischedular.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { EmployementDetailsComponent } from './employement-details/employement-details.component';
+import { UploadComponent } from './upload/upload.component';
 
 
 
@@ -40,7 +45,12 @@ import { HomepageComponent } from './homepage/homepage.component';
     VehicleloanComponent,
     EligibilityComponent,
     ForgotpasswordComponent,
-    HomepageComponent
+    HomepageComponent,
+    EmischedularComponent,
+    VehicleDetailsComponent,
+    LoanDetailsComponent,
+    EmployementDetailsComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

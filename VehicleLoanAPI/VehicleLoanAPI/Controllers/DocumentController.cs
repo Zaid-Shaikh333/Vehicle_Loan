@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using VehicleLoanAPI.Models;
+using VehicleLoanAPI.Service;
 
 namespace VehicleLoanAPI.Controllers
 {
@@ -13,42 +17,111 @@ namespace VehicleLoanAPI.Controllers
     [ApiController]
     public class DocumentController : ControllerBase
     {
-        /*[HttpPost,DisableRequestSizeLimit]
-        public IActionResult Upload()
+        
+        
+
+        private readonly Vehicle_LoanContext _context;
+
+        public DocumentController(Vehicle_LoanContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Document>>> GetDocuments()
+        {
+            return await _context.Documents.ToListAsync();
+        }
+
+
+        [HttpPost, DisableRequestSizeLimit]
+        public async Task<IActionResult> UploadAsync()
         {
             try
             {
-                dynamic aadharfile = Request.Form.Files[0];
-                dynamic panfile = Request.Form.Files[1];
-                dynamic photofile = Request.Form.Files[2];
-                dynamic salaryslipfile = Request.Form.Files[3];
-                dynamic filepath = "C: \\Users\\Anita\\Desktop\\Vehicle Loan\\VehicleProject\\src\\assets";
-                if (aadharfile.Length>0 && panfile.Length > 0 && photofile.Length > 0 && salaryslipfile.Length > 0)
+                var dbPath = "";
+                List<string> doc = new List<string>();
+                Document document = new Document();
+                var files = Request.Form.Files;
+                var folderName = Path.Combine("Resources", "Images");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                if (files.Any(f => f.Length == 0))
                 {
-                    dynamic aadharname = ContentDispositionHeaderValue.Parse(aadharfile.ContentDisposition).FileName.Trim();
-                    dynamic panName = ContentDispositionHeaderValue.Parse(panfile.ContentDisposition).FileName.Trim();
-                    dynamic photoname = ContentDispositionHeaderValue.Parse(photofile.ContentDisposition).FileName.Trim();
-                    dynamic sslipname = ContentDispositionHeaderValue.Parse(salaryslipfile.ContentDisposition).FileName.Trim();
-
-                    using (dynamic stream = new FileStream(filepath, FileMode.Create))
+                    return BadRequest();
+                }
+                
+                for(int i=0; i < 4;i++)
+                {
+                    
+                    var fileName = ContentDispositionHeaderValue.Parse(files[i].ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    dbPath = Path.Combine(folderName, fileName); //you can add this path to a list and then return all dbPaths to the client if require
+                    doc.Add(dbPath);
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
                     {
-                        aadharfile.CopyTo(stream);
-                        panfile.CopyTo(stream);
-                        photofile.CopyTo(stream);
-                        salaryslipfile.CopyTo(stream);
+                        files[i].CopyTo(stream);
                     }
-                    return Ok(new {filepath});
-
+                  
+                }
+                document.AadharCard =doc[0];
+                document.PanCard = doc[1];
+                document.SalarySlip = doc[2];
+                document.Photo = doc[3];
+                
+                _context.Documents.Add(document);
+                await _context.SaveChangesAsync();
+                return Ok(new { dbPath });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+            /*try
+            {
+                Document document = new Document();
+                var formCollection = await Request.ReadFormAsync();
+                var file = formCollection.Files.First();
+                var folderName = Path.Combine("Resources", "Images");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                if (file.Length > 0)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = Path.Combine(folderName, fileName);
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+                    document.AadharCard = dbPath;
+                    _context.Documents.Add(document);
+                    await _context.SaveChangesAsync();
+                    return Ok(new { dbPath });
                 }
                 else
                 {
-                    return NotFound("NO Files Found!!!!");
+                    return BadRequest();
                 }
-
             }
-            catch(Exception e)
+            catch (Exception ex)
             {
-                return BadRequest(e);
+                return StatusCode(500, $"Internal server error: {ex}");
+            }*/
+
+        }
+            
+
+        /*[HttpPost("{id}")]
+        [Authorize]
+        public async Task<IActionResult> AddPhoto(IFormFile file, int uid)
+        {
+            var result = await iphotoService.UploadPhotoAsync(file);
+            if (result.Error != null)
+            {
+                return BadRequest(result.Error.Message);
+            }
+            else
+            {
+                return Ok(201);
             }
         }*/
     }

@@ -34,10 +34,11 @@ fetchData() {
  // debugger;
   this.uservice.GetPending_Applications().subscribe((data) => {console.table(data); this.clients = data});
 }
-
+id?:any;
+msg:any;
     approveLoan()
   {
-    
+   // this.uservice.SetApproval_Application(this.id,this.msg).subscribe((data)=>{console.table(data);this.clients=data});
   }
 
   rejectLoan()

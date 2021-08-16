@@ -3,5 +3,6 @@ export class Employment {
     annualSalary?: number;
     emi?: number;
     otherIncome?: number;
+    userId?:any;
 }
 
